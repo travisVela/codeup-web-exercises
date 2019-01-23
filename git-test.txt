@@ -1,1 +1,3 @@
 Getting Git is legit.
+
+This is the second line in the file.
