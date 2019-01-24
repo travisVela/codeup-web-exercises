@@ -1,73 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Register With US</title>
-    </head>
-    <body>
-        <header>
+<head>
+    <meta charset="UTF-8">
+    <title>Veridian Dynamics: Register</title>
+</head>
+<body>
+    <header>
+        <h1>Register With Us</h1>
+    </header>
 
-        </header>
-        <main>
-            <form method="POST" action="https://request-inspector.glitch.me/">
-                <label for="email">
-                    <input id="email" name="email" type="email" placeholder="email">
-                </label>
-                <label for="password">
-                    <input id="password" name="password" type="password" placeholder="password">
-                </label>
+    <main>
+        <form method="POST" action="https://request-inspector.glitch.me/">
+            <fieldset>
+                <legend> General Info</legend>
+                <label for="email">Email:</label>
+                <input id="email" name="email" type="email" placeholder="email">
+                <label for="password">Password:</label>
+                <input id="password" name="password" type="password" placeholder="password">
                 <br>
                 <br>
-                <label for="bio"></label>
+                <label for="bio">Bio:</label>
                 <textarea id="bio" name="bio" rows="5" cols="50" placeholder="bio"></textarea>
+            </fieldset>
+            <br>
+            <br>
+            <fieldset>
+                <legend>How did you hear about us?</legend>
+                <label for="billboard">
+                    <input id="billboard" type="checkbox" name="hear-about-us" value="billboard"> Billboard
+                </label>
                 <br>
+                <label for="radio">
+                    <input id="radio" type="checkbox" name="hear-about-us" value="radio"> Radio Advertisement
+                </label>
                 <br>
-                <fieldset>
-                    <legend>
-                        How did you hear about us?
-                    </legend>
-                    <label for="billboard">
-                        <input id="billboard" type="checkbox" name="hear-about-us" value="billboard"> Billboard
-                    </label>
-                    <br>
-                    <label for="radio">
-                        <input id="radio" type="checkbox" name="hear-about-us" value="radio"> Radio Advertisement
-                        </label>
-                    <br>
-                    <label for="internet">
-                        <input id="internet" type="checkbox" name="hear-about-us" value="internet"> Internet Advertisement
-                    </label>
-                    <br>
-                    <label for="other">
-                        <input id="other" type="checkbox" name="hear-about-us" value="other"> Other
-                    </label>
-                </fieldset>
+                <label for="internet">
+                    <input id="internet" type="checkbox" name="hear-about-us" value="internet"> Internet Advertisement
+                </label>
                 <br>
-                <fieldset>
-                    <legend>
-                        Which web browser are you using?
-                    </legend>
-                    <select name="web-browser">
-                        <label for="google">
-                            <option id="google" name="browser" value="google">
-                                Google Chrome
-                            </option>
-                        </label>
-                        <label for="firefox">
-                            <option id="firefox" name="browser" value="Firefox">
-                                Firefox
-                            </option>
-                        </label>
-                        <label for="safari">
-                        <option id="safari" name="browser" value="Safari">
-                            Safari
-                        </option>
-                        </label>
-                    </select>
-                </fieldset>
-                <br>
-                <button>Submit</button>
-            </form>
-        </main>
-    </body>
+                <label for="other">
+                    <input id="other" type="checkbox" name="hear-about-us" value="other"> Other
+                </label>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Which web browser are you using?</legend>
+
+                <select name="web-browser">
+                    <option value="google">
+                        Google Chrome
+                    </option>
+                    <option value="Firefox">
+                        Firefox
+                    </option>
+                    <option value="Safari">
+                        Safari
+                    </option>
+                </select>
+            </fieldset>
+            <br>
+            <button>Submit</button>
+        </form>
+    </main>
+</body>
 </html>
