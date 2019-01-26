@@ -2,71 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dog Walking</title>
+    <title>Dog Walker</title>
+    <link rel="stylesheet" href="css/dog-walker.css">
 </head>
 <body>
     <header>
-        <h1 align="center">Dog Walker Texas Ranger</h1>
-        <h4 align="center"><em>Register today!</em></h4>
+        <h1 id="header-heading">Dog Walker</h1>
+        <h2 id="header-sub-heading">Texas Ranger</h2>
+        <h2><em>Register today!</em></h2>
         <hr>
     </header>
-    <main>
-        <form method="POST" action="https://request-inspector.glitch.me/">
-            <div>
-                <h3 align="center">General Info</h3>
-                <label for="name"></label>
-                <input id="name" type="text" name="name" placeholder="name">
-                <label for="email"></label>
-                <input id="email" type="email" name="email" placeholder="email">
-                <label for="password"></label>
-                <input id="password" type="password" name="password" placeholder="password">
-                <label for="user-id"></label>
-                <input id="user-id" type="hidden" name="user-id">
-            </div>
-            <br>
-            <div align="center">
-                <h2>Questions</h2>
-                <div></div>
-            </div>
-            <div>
-                <h4>How many dogs need to be walked?</h4>
-                <select name="quantity">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4 or more">4 or more</option>
-                </select>
-                <h4>How long of a walk would they like?</h4>
-                <label for="15">
-                    <input id="15" type="radio" name="length" value="15">15min
-                </label>
-                <label for="30">
-                    <input id="30" type="radio" name="length" value="30">30 min
-                </label>
-                <label for="45">
-                    <input id="45" type="radio" name="length" value="45">45 min
-                </label>
-                <h4>What type of treats do they like?</h4>
-                <p><em>(multiple selections ok. They will get multiple treats!)</em></p>
-                <label for="chewy">
-                    <input id="chewy" type="checkbox" name="treats" value="chewy">Chewy
-                </label>
-                <label for="crunchy">
-                    <input id="crunchy" type="checkbox" name="treats" value="crunchy">Crunchy
-                </label>
-                <label for="bone">
-                    <input id="bone" type="checkbox" name="treats" value="bone">Chicken Bone
-                </label>
-                <label for="leftovers">
-                    <input id="leftovers" type="checkbox" name="treats" value="leftovers">Left-overs
-                </label>
-            </div>
-            <br>
-            <button>Submit</button>
-        </form>
-    </main>
-    <br>
-    <br>
+    <div class="container">
+        <div class="row">
+            <form method="POST" action="https://request-inspector.glitch.me/">
+                <div class="column one-third" id="gen-info">
+                    <h2 class="fancy-heading">Contact Info</h2>
+                    <label for="name"></label>
+                    <input id="name" type="text" name="name" placeholder="name">
+                    <label for="email"></label>
+                    <input id="email" type="email" name="email" placeholder="email">
+                    <br>
+                    <label for="password"></label>
+                    <input id="password" type="password" name="password" placeholder="password">
+                    <label for="confirm"></label>
+                    <input id="confirm" type="password" name="confirm" placeholder="confirm password">
+                    <label for="user-id"></label>
+                    <input id="user-id" type="hidden" name="user-id">
+                    <br>
+                    <label for="message"></label>
+                    <textarea id="message" name="message" placeholder="message" row="4" cols="40"></textarea>
+                </div>
+                <div class="column two-third">
+                    <div class="row" id="questions">
+                        <h2 class="fancy-heading">Questions</h2>
+                    </div>
+                    <div class="row">
+                        <div class="column one-half" id="left-side">
+                            <h4>How many dogs need to be walked?</h4>
+                            <select name="quantity">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4 or more">4 or more</option>
+                            </select>
+                            <h4>How long of a walk would they like?</h4>
+                            <label for="15">
+                                <input id="15" type="radio" name="length" value="15">15min
+                            </label>
+                            <label for="30">
+                                <input id="30" type="radio" name="length" value="30">30 min
+                            </label>
+                            <label for="45">
+                                <input id="45" type="radio" name="length" value="45">45 min
+                            </label>
+                        </div>
+                        <div class="column one-half" id="right-side">
+                            <h4>What type of treats do they like?</h4>
+                            <p><em>(multiple selections ok. They will get multiple treats!)</em></p>
+                            <label for="chewy">
+                                <input id="chewy" type="checkbox" name="treats" value="chewy">Chewy
+                            </label>
+                            <label for="crunchy">
+                                <input id="crunchy" type="checkbox" name="treats" value="crunchy">Crunchy
+                            </label>
+                            <label for="bone">
+                                <input id="bone" type="checkbox" name="treats" value="bone">Chicken Bone
+                            </label>
+                            <label for="leftovers">
+                                <input id="leftovers" type="checkbox" name="treats" value="leftovers">Left-overs
+                            </label>
+                            <button>Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
     <footer>
         <table width="100%" border="1px solid #333">
             <tr>
