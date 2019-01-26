@@ -1,0 +1,52 @@
+/********************
+*                   *
+*   general style   *
+*                   *
+********************/
+
+body {
+    background-color: #ccc;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 300px;
+    background-image: url('../img/dog-walker-img-1.png');
+    background-repeat: no-repeat;
+    background-color: #fff;
+}
+
+#header-heading {
+    font-size: 3em;
+    color: #303133;
+}
+
+/*******************
+*                  *
+*   main section   *
+*                  *
+*******************/
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+#left-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 30%;
+}
+#right-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 60%;
+}
