@@ -25,10 +25,11 @@ header {
 * {
     box-sizing: border-box;
 }
+
 .container {
     margin: 0;
     width: 100%;
-    /*max-width: 1200px;*/
+    /*max-width: 1600px;*/
 }
 
 .row {
@@ -38,8 +39,8 @@ header {
 
 .column {
     display: table-cell;
-    float: left;
     padding: 10px;
+    float: left;
 }
 
 .column.one-third {
@@ -51,10 +52,13 @@ header {
 
 }
 
+.inner-row {
+    width: 100%;
+}
+
 .column.one-half {
     width: 50%;
 }
-
 .row:after {
     content: "";
     display: table;
