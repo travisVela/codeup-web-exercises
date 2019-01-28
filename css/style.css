@@ -1,5 +1,131 @@
-/*   fancy header   */
-.fancy-header {
-    color: #800080;
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+/********************
+*                   *
+*   general style   *
+*                   *
+********************/
+h2 {
+    color: #408211;
     text-decoration: underline;
 }
+/***************
+* body style   *
+***************/
+body {
+    background-image: url('../img/veridian-oxide-of-chromium-light.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #ccc;
+    font-family: 'Ubuntu', sans-serif;
+}
+/*   add overlay to image   */
+/*body:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, .5);
+}*/
+
+/************************
+*   top section style   *
+************************/
+#top-section {
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.fancy-header {
+    color: #40826D;
+    text-decoration: underline;
+    font-size: 3em;
+}
+
+/*********************
+*   second section   *
+*********************/
+#second-section {
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: #33333330;
+}
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 33%;
+    /*margin: 20px;*/
+    /*padding: 10px;*/
+
+}
+
+/*********************
+*   bottom section   *
+*********************/
+#bottom-section {
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/*****************
+*   list style   *
+*****************/
+
+ul {
+    list-style: square;
+}
+/********************
+*   table styling   *
+********************/
+table {
+    border: 1px solid #333;
+    font-size: 1.5em;
+    border-spacing: 0;
+}
+th {
+    border-bottom: 1px solid #333;
+    padding: 10px;
+}
+.even-rows {
+    background-color: #eee;
+}
+tr {
+    padding: 20px;
+}
+
+td {
+    padding: 10px;
+}
+
+/******************
+*   anchor tags   *
+******************/
+a {
+    color: #555;
+}
+
+a:visited {
+    color: #800080;
+}
+
+a:active {
+    color: #332211;
+}
+
+a:hover {
+    color: #40826D;
+}
+
+
