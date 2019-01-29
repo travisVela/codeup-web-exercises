@@ -1,0 +1,98 @@
+/**************
+*             *
+*   general   *
+*             *
+**************/
+* {
+    font-family: arial, san-serif;
+    box-sizing: border-box;
+}
+
+
+/*****************
+*                *
+*   navigation   *
+*                *
+*****************/
+header {
+    margin: 0 auto;
+    width: 100%;
+
+}
+
+.top-nav {
+    background-color: #333;
+    color: #fff;
+    height: 39px;
+    display: flex;
+    justify-content: center;
+    font-size: 1em;
+}
+.logo {
+    width: auto;
+    height: 40px;
+    padding: 5px;
+}
+.top-nav ul {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.nav-item {
+    padding: 8px 10px;
+    border-left: 1px solid #545454;
+    line-height: 1;
+    border-bottom: 3px solid #333;
+    border-top: 3px solid #333;;
+}
+.top-nav li {
+
+
+}
+
+.top-nav a {
+    color: #fff;
+    text-decoration: none;
+}
+.id-icon {
+    background: url('../img/sign-in-icon.png');
+}
+#sign-in {
+
+    width: 100px;
+}
+/*   hover bottom border   */
+#nav-n:hover {
+    border-bottom: 3px solid #9b2313;
+}
+#nav-s:hover {
+    border-bottom: 3px solid #ffe711;
+}
+#nav-w:hover {
+    border-bottom: 3px solid #77cdff;
+}
+#nav-i:hover {
+    border-bottom: 3px solid #ed3482;
+}
+#nav-t:hover {
+    border-bottom: 3px solid #fff;
+}
+#nav-r:hover {
+    border-bottom: 3px solid #fff;
+}
+#nav-m:hover {
+    border-bottom: 3px solid #fff;
+    border-left: 1px solid #545454;
+}
+/*   search bar   */
+/*#search {*/
+    /*line-height: 1.7em;*/
+    /*font-weight: bold;*/
+    /*width: 100%;*/
+    /*height: 2em;*/
+    /*border-style: none;*/
+
+/*}*/
