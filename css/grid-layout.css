@@ -27,20 +27,25 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-    .one-half {
+    .one-half,
+    .one-fourth,
+    .three-eighths {
         width: 50%;
     }
-    .one-third {
-        width: 33.33%;
-    }
-    .one-fourth {
-        width: 50%;
-    }
+    .one-third,
     .one-sixth {
         width: 33.33%;
     }
+    .two-third,
+    .five-eighths,
+    .five-sixth {
+        width: 66.67%;
+    }
     .one-eighth {
         width: 25%;
+    }
+    .seven-eighth {
+        width: 75%;
     }
 }
 
@@ -51,13 +56,31 @@ body {
     .one-third {
         width: 33.33%;
     }
+    .two-third {
+        width: 66.67%;
+    }
     .one-fourth {
         width: 25%;
+    }
+    .three-fourth {
+        width: 75%;
     }
     .one-sixth {
         width: 16.66%;
     }
+    .five-sixth {
+        width: 83.33%;
+    }
     .one-eighth {
         width: 12.5%
+    }
+    .three-eighth {
+        width: 37.5%;
+    }
+    .five-eighth {
+        width: 62.5%
+    }
+    .seven-eighth {
+        width: 87.5%;
     }
 }
