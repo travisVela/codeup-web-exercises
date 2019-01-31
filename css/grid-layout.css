@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+.container {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1200px;
+}
+.row {
+    width: 100%;
+}
+.row:after {
+    content:"";
+    display: table;
+    clear: both;
+}
+.column {
+    float: left;
+    padding: 10px;
+    /*border: 1px solid black;*/
+    /*background: #e1e2e1;*/
+    margin: 10px 0;
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .one-half {
+        width: 50%;
+    }
+    .one-third {
+        width: 33.33%;
+    }
+    .one-fourth {
+        width: 50%;
+    }
+    .one-sixth {
+        width: 33.33%;
+    }
+    .one-eighth {
+        width: 25%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .one-half {
+        width: 50%;
+    }
+    .one-third {
+        width: 33.33%;
+    }
+    .one-fourth {
+        width: 25%;
+    }
+    .one-sixth {
+        width: 16.66%;
+    }
+    .one-eighth {
+        width: 12.5%
+    }
+}
