@@ -95,7 +95,7 @@ footer {
 *             *
 **************/
 
-@media only screen and (min-width: 700px) {
+@media screen and (min-width: 700px) {
 
     /******************
     *                 *
@@ -109,7 +109,6 @@ footer {
     }
     .nav-links {
         float: right;
-        margin-right: 15px;
         position: relative;
         top: 2em;
     }
@@ -148,7 +147,7 @@ footer {
     *            *
     *************/
     footer {
-        margin: 300px 0 100px 0;
+        /*margin: 300px 0 100px 0;*/
         display: flex;
         justify-content: space-between;
         flex-direction: row-reverse;
@@ -156,6 +155,9 @@ footer {
     footer p {
         text-align: right;
         align-self: center;
+    }
+    footer.row {
+        margin: 300px 0 100px 0;
     }
     #social-media-links {
         justify-content: space-between;
