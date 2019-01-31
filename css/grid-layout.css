@@ -20,8 +20,8 @@ body {
 .column {
     float: left;
     padding: 10px;
-    border: 1px solid black;
-    background: #e1e2e1;
+    /*border: 1px solid black;*/
+    /*background: #e1e2e1;*/
     margin: 10px 0;
     width: 100%;
 }
