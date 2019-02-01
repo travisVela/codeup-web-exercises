@@ -1,0 +1,20 @@
+/*************
+*            *
+*   navbar   *
+*            *
+*************/
+.nav-link:hover {
+    background: #e7e7e7;
+    height: 100%;
+}
+
+.jumbotron {
+    background-image: url("../img/pizza.png");
+    background-size: cover;
+}
+.h-opa {
+    opacity: .7;
+}
+h1 {
+    width: 100%;
+}
