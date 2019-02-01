@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
+    <!------------|   navbar/header   |----------->
+
     <div class="container text-dark">
         <nav class="navbar navbar-expand-lg navbar-light bg-light rounded my-sm-2 pr-2">
             <a class="navbar-brand text-muted" href="#">Pizza World</a>
@@ -42,10 +44,18 @@
             <h1 class="display-4 text-center bg-light w-100 h-opa">Welcome to Pizza World!</h1>
         </header>
     </div>
+    <!--------|   end of section   |-------->
+
     <main class="container">
         <h2>Build your own pizza!</h2>
         <hr>
+
+        <!--------|   start of form   |-------->
+
         <form method="Post" action="https://request-inspector.glitch.me/">
+
+            <!--------|   nav for piazza values   |-------->
+
             <ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item">
                     <a class="nav-link active" id="crust-tab" data-toggle="tab" href="#crust-pane" role="tab" aria-controls="crust-tab" aria-selected="true">
@@ -66,30 +76,42 @@
                     </a>
                 </li>
             </ul>
+
+            <!--------|   start of tab content card   |-------->
+
             <div class="tab-content id=nav-tabContent">
                 <div id="crust-pane" class="card mb-4 tab-pane fade show active" role="tabpanel" aria-labelledby="crust-tab">
-                    <h4 class="card-title bg-primary p-3 rounded text-light">Choose size and crust</h4>
+                    <div class="card-header bg-primary rounded text-light">
+                        Choose size and crust
+                    </div>
+
+                    <!--------|   crust pane   |-------->
+
                     <div class="card-body">
-                        <div class="card mb-sm-4">
+                        <div class="card mb-4">
                             <div class="card-header">
                                 Hand tossed
                             </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste</li>
-                                <li class="list-group-item">
-                                    <input type="radio" name="crust" value="garlic-small"> Small (10")
-                                </li>
-                                <li class="list-group-item">
-                                    <input type="radio" name="crust" value="garlic-medium"> Medium (12")
-                                </li>
-                            </ul>
+                            <div class="card-body">
+                                Garlic seasoned crust with a rich, buttery taste
+                            </div>
+                                <ul class="list-group w-100">
+                                    <li class="list-group-item">
+                                        <input type="radio" name="crust" value="garlic-small"> Small (10")
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input type="radio" name="crust" value="garlic-medium"> Medium (12")
+                                    </li>
+                                </ul>
                         </div>
                         <div class="card">
-                            <div class="card-header" >
+                            <div class="card-header">
                                 Crispy Thin
                             </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Thin enough for optimum crispy ratio.</li>
+                            <div class="card-body">
+                                Thin enough for optimum crispy ratio.
+                            </div>
+                            <ul class="list-group">
                                 <li class="list-group-item">
                                     <input type="radio" name="crust" value="thin-medium"> Medium (12")
                                 </li>
@@ -99,51 +121,54 @@
                             </ul>
                         </div>
                     </div>
+
+                    <!--------|   cheese pane   |-------->
+
                     <div class="card-footer d-flex justify-content-end">
-                        <a href="#" class="btn btn-primary ">
+                        <a href="#cheese-pane" class="btn btn-primary ">
                             Next Step
                             <i class="fas fa-angle-right"></i>
                         </a>
                     </div>
                 </div>
                 <div id="cheese-pane" class="card mb-4 tab-pane fade" role="tabpanel" aria-labelledby="cheese-tab">
-                    <h4 class="card-title bg-primary p-3 rounded text-light">Choose cheese and sauce</h4>
+                    <div class="card-header bg-primary rounded text-light">
+                        Choose cheese and sauce
+                    </div>
                     <div class="card-body">
-                        <div class="card mb-sm-4">
+                        <div class="card mb-4">
                             <div class="card-header">
                                 Cheese
                             </div>
-                            <form>
-                                <div class="form-group p-3 mb-4">
-                                    <label for="cheese">How much?</label>
-                                    <select id="cheese" class="form-control" name="cheese">
-                                        <option value="light">Light</option>
-                                        <option value="normal">Normal</option>
-                                        <option value="extra">Extra</option>
-                                        <option value="double">Double</option>
-                                    </select>
-                                </div>
-                            </form>
+                            <div class="card-body">
+                                <label for="cheese">How much?</label>
+                                <select id="cheese" class="form-control" name="cheese">
+                                    <option value="light">Light</option>
+                                    <option value="normal">Normal</option>
+                                    <option value="extra">Extra</option>
+                                    <option value="double">Double</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="card">
-                                <div class="card-header">
-                                    Sauce
-                                </div>
-                                <div class="form-group p-3">
-                                    <label for="sauce-type">What type?</label>
-                                    <select id="sauce-type" class="form-control" name="sauce-type">
-                                        <option value="tomato">Tomato sauce</option>
-                                        <option value="marinara">Marinara sauce</option>
-                                        <option value="bbq">BBQ sauce</option>
-                                        <option value="alfredo">Alfredo sauce</option>
-                                    </select>
-                                    <label for="sauce-amount">How much?</label>
-                                    <select id="sauce-amount" class="form-control" name="sauce-amount">
-                                        <option value="light">Light</option>
-                                        <option value="normal">Normal</option>
-                                        <option value="extra">Extra</option>
-                                    </select>
-                                </div>
+                            <div class="card-header">
+                                Sauce
+                            </div>
+                            <div class="card-body p-3">
+                                <label for="sauce-type">What type?</label>
+                                <select id="sauce-type" class="form-control" name="sauce-type">
+                                    <option value="tomato">Tomato sauce</option>
+                                    <option value="marinara">Marinara sauce</option>
+                                    <option value="bbq">BBQ sauce</option>
+                                    <option value="alfredo">Alfredo sauce</option>
+                                </select>
+                                <label for="sauce-amount">How much?</label>
+                                <select id="sauce-amount" class="form-control" name="sauce-amount">
+                                    <option value="light">Light</option>
+                                    <option value="normal">Normal</option>
+                                    <option value="extra">Extra</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                     <div class="card-footer d-flex justify-content-end">
@@ -159,8 +184,13 @@
                         </div>
                     </div>
                 </div>
+
+                <!--------|   toppings pane   |-------->
+
                 <div id="toppings-pane" class="card mb-4 tab-pane fade" role="tabpanel" aria-labelledby="toppings-tab">
-                    <h4 class="card-title bg-primary p-3 rounded text-light">Choose toppings</h4>
+                    <div class="card-header bg-primary rounded text-light">
+                        Choose toppings
+                    </div>
                     <div class="card-body">
                         <div class="card mb-sm-4">
                             <div class="card-header">
@@ -181,7 +211,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="card mb-sm-4">
+                        <div class="card mb-4">
                             <div class="card-header">
                                 Choose Non-Meats
                             </div>
@@ -211,6 +241,9 @@
                     </div>
                 </div>
             </div>
+
+            <!--------|   end of tabs content   |-------->
+
         </form>
     </main>
 
