@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
+
     <!------------|   navbar/header   |----------->
 
     <div class="container text-dark">
@@ -26,11 +27,11 @@
                         <a class="nav-link" href="#">Menu</a>
                     </li>
                 </ul>
-                <form class="form-inline mr-auto my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Zip Code" aria-label="Search">
-                    <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search stores near you!
-                    </button>
-                </form>
+                    <form class="form-inline d-block-sm">
+                        <input class="col-sm-6 col-md-4 form-control mr-sm-2" type="search" placeholder="Zip Code" aria-label="Search">
+                        <button class="col-sm-6 col-md-6 btn btn-outline-secondary my-2" type="submit">Search stores near you!
+                        </button>
+                    </form>
                 <ul class="navbar navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="#"><span class="fas fa-user"></span>
@@ -41,9 +42,10 @@
             </div>
         </nav>
         <header class="container jumbotron px-0 d-none d-md-block">
-            <h1 class="display-4 text-center bg-light w-100 h-opa">Welcome to Pizza World!</h1>
+            <h1 class="display-4 text-center bg-light h-opa">Welcome to Pizza World!</h1>
         </header>
     </div>
+
     <!--------|   end of section   |-------->
 
     <main class="container">
@@ -52,7 +54,7 @@
 
         <!--------|   start of form   |-------->
 
-        <form method="Post" action="https://request-inspector.glitch.me/">
+        <form method="POST" action="https://request-inspector.glitch.me/">
 
             <!--------|   nav for piazza values   |-------->
 
