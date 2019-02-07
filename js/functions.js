@@ -1,3 +1,5 @@
+(function(){
+
 "use strict";
 
 /**
@@ -9,10 +11,9 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 function sayHello(name) {
-    console.log('Hello' + ' ' + name + '!');
+    return 'Hello' + ' ' + name + '!';
 }
 
-sayHello('travis');
 /**
  * TODO:
  * Call the function 'sayHello' and pass your name as a string literal argument.
@@ -30,7 +31,7 @@ console.log(helloMessage);
  * console.
  */
 var myName = 'Travis';
-sayHello(myName);
+console.log(sayHello(myName));
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -54,18 +55,14 @@ var random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
 function isTwo(number) {
-    if (number == 2) {
-        console.log(true);
-    } else {
-        console.log(false);
-    }
+    return number == 2;
 }
 
-isTwo(1);
-isTwo(2);
-isTwo(3);
+console.log(isTwo(1));
+console.log(isTwo(2));
+console.log(isTwo(3));
 console.log('The random number is' + ' ' + random);
-isTwo(random);
+console.log('Random number equal to 2?' + ' ' + isTwo(random));
 
 /**
  * TODO:
@@ -79,7 +76,7 @@ isTwo(random);
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 
-var total;
+
 function calculateTip(percentage, bill) {
     percentage = +percentage / 100;
     return percentage * +bill;
@@ -96,9 +93,9 @@ function calculateTip(percentage, bill) {
  * then display the dollar amount they should tip
  */
 
-var bill = prompt('What is the bill amount?');
-var percentage = prompt('What is the tip percentage you would like to apply?');
-alert('Tip amount is ' + '$' + calculateTip(percentage, bill) + '.');
+// var bill = prompt('What is the bill amount?');
+// var percentage = prompt('What is the tip percentage you would like to apply?');
+// alert('Tip amount is ' + '$' + calculateTip(percentage, bill).toFixed(2) + '.');
 
 
 
@@ -112,8 +109,15 @@ alert('Tip amount is ' + '$' + calculateTip(percentage, bill) + '.');
  * Example:
  * > var originalPrice = 100;
  * > var dicountPercent = .2; // 20%
- * > applyDiscount(originalPrice, dicountPercent) // 80
+ * > applyDiscount(originalPrice, discountPercent) // 80
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+function applyDiscount(price, discount) {
+    discount = (+discount / 100) * price;
+    return 'The discounted price is $' + (price - discount).toFixed(2) + '\n'
+    + 'You saved $' + discount.toFixed(2);
+}
+console.log(applyDiscount(100, 20));
 
+})();
