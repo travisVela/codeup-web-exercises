@@ -25,7 +25,7 @@ function promptMessage() {
         number = parseInt(number);
         return true;
     } else {
-        alert('All good.')
+        alert('All good.');
         return false;
     }
 }
@@ -91,7 +91,7 @@ mainFunction();
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
-function analyzeColor(color) {
+function analyzeColor() {
     if (color === 'red') {
         console.log('Red is the color of fire');
     } else if (color === 'orange') {
@@ -105,20 +105,20 @@ function analyzeColor(color) {
     } else if (color === 'indigo') {
         console.log('Indigo girls is a band');
     } else if (color === 'violet') {
-        console.log('Violet is a color and a flower.')
+        console.log('Violet is a color and a flower.');
     } else {
-        console.log('This color is not defined.')
+        console.log('This color is not defined.');
     }
 }
 
-analyzeColor('red');
-analyzeColor('orange');
-analyzeColor('yellow');
-analyzeColor('green');
-analyzeColor('blue');
-analyzeColor('indigo');
-analyzeColor('violet');
-analyzeColor('purple');
+// analyzeColor('red');
+// analyzeColor('orange');
+// analyzeColor('yellow');
+// analyzeColor('green');
+// analyzeColor('blue');
+// analyzeColor('indigo');
+// analyzeColor('violet');
+// analyzeColor('purple');
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -132,16 +132,16 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Pass the `randomColor` variable to your function and console.log the results.
  * You should see a different message everytime you refresh the page
  */
-analyzeColor(randomColor);
+// analyzeColor(randomColor);
 
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
-function analyzeColor(color) {
+function analyzeColor() {
     switch (color) {
         case 'red':
-            console.log('Red is the color of fire.')
+            console.log('Red is the color of fire.');
             break;
         case 'orange':
             console.log('Orange is both a color and a fruit.');
@@ -150,10 +150,10 @@ function analyzeColor(color) {
             console.log('Yellow is the color of the sun.');
             break;
         case 'green':
-            console.log('Green is the color of grass.')
+            console.log('Green is the color of grass.');
             break;
         case 'blue':
-            console.log('Blue is the color of the sky.')
+            console.log('Blue is the color of the sky.');
             break;
         case 'indigo':
             console.log('Indigo is a color between blue and violet.');
@@ -162,9 +162,10 @@ function analyzeColor(color) {
             console.log('Violet is a color and a flower.');
             break;
         default:
-            console.log('This color is not defined.')
+            console.log('The color is not defined.');
     }
 }
+
 
 /**
  * TODO:
@@ -198,11 +199,10 @@ function analyzeColor() {
         alert('Violet is a color and a flower.');
 
     } else {
-        alert('This color is not defined.');
+        alert('The color is not defined.');
     }
 }
 analyzeColor(color);
-
 
 /* ########################################################################## */
 
