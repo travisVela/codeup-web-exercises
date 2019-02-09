@@ -91,6 +91,34 @@ mainFunction();
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
+function analyzeColor(color) {
+    if (color === 'red') {
+        console.log('Red is the color of fire');
+    } else if (color === 'orange') {
+        console.log('Orange is both a color and a fruit.');
+    } else if (color === 'yellow') {
+        console.log('Yellow is the color of the sun.');
+    } else if (color === 'green') {
+        console.log('Green is the color fo grass.');
+    } else if (color === 'blue') {
+        console.log('Blue is the color of the sky.');
+    } else if (color === 'indigo') {
+        console.log('Indigo girls is a band');
+    } else if (color === 'violet') {
+        console.log('Violet is a color and a flower.')
+    } else {
+        console.log('This color is not defined.')
+    }
+}
+
+analyzeColor('red');
+analyzeColor('orange');
+analyzeColor('yellow');
+analyzeColor('green');
+analyzeColor('blue');
+analyzeColor('indigo');
+analyzeColor('violet');
+analyzeColor('purple');
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -104,11 +132,39 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Pass the `randomColor` variable to your function and console.log the results.
  * You should see a different message everytime you refresh the page
  */
+analyzeColor(randomColor);
 
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
+function analyzeColor(color) {
+    switch (color) {
+        case 'red':
+            console.log('Red is the color of fire.')
+            break;
+        case 'orange':
+            console.log('Orange is both a color and a fruit.');
+            break;
+        case 'yellow':
+            console.log('Yellow is the color of the sun.');
+            break;
+        case 'green':
+            console.log('Green is the color of grass.')
+            break;
+        case 'blue':
+            console.log('Blue is the color of the sky.')
+            break;
+        case 'indigo':
+            console.log('Indigo is a color between blue and violet.');
+            break;
+        case 'violet':
+            console.log('Violet is a color and a flower.');
+            break;
+        default:
+            console.log('This color is not defined.')
+    }
+}
 
 /**
  * TODO:
@@ -116,6 +172,37 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+
+var color = prompt('Enter a color');
+color = color.toLowerCase();
+
+function analyzeColor() {
+    if (color === 'red') {
+        alert('Red is the color of fire');
+    } else if (color === 'orange') {
+        alert('Orange is both a color and a fruit.');
+
+    } else if (color === 'yellow') {
+        alert('Yellow is the color of the sun.');
+
+    } else if (color === 'green') {
+        alert('Green is the color fo grass.');
+
+    } else if (color === 'blue') {
+        alert('Blue is the color of the sky.');
+
+    } else if (color === 'indigo') {
+        alert('Indigo girls is a band');
+
+    } else if (color === 'violet') {
+        alert('Violet is a color and a flower.');
+
+    } else {
+        alert('This color is not defined.');
+    }
+}
+analyzeColor(color);
+
 
 /* ########################################################################## */
 
@@ -139,6 +226,30 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * return value.
  */
 
+
+function calculateTotal(luckyNumber, totalAmount) {
+    if (luckyNumber === 0) {
+        return totalAmount;
+    } else if (luckyNumber === 1) {
+        return (totalAmount - (totalAmount * .10)).toFixed(2);
+    } else if (luckyNumber === 2) {
+        return (totalAmount - (totalAmount * .25)).toFixed(2);
+    } else if (luckyNumber === 3) {
+        return (totalAmount - (totalAmount * .35)).toFixed(2);
+    } else if (luckyNumber === 4) {
+        return (totalAmount - (totalAmount * .50)).toFixed(2);
+    } else if (luckyNumber === 5) {
+        return 0;
+    }
+}
+console.log(calculateTotal(0, 100)); // returns 100
+console.log(calculateTotal(4, 100)); // returns 50
+console.log(calculateTotal(5, 100)); // returns 0
+console.log(calculateTotal(1, 100));
+console.log(calculateTotal(2, 100));
+console.log(calculateTotal(3, 100));
+
+
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 6.
@@ -147,4 +258,10 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+var luckyNumber = Math.floor(Math.random() * 6);
+var totalAmount = prompt('What is your total amount?');
+totalAmount = parseInt(totalAmount).toFixed(2);
+
+alert('Your lucky number is ' + luckyNumber + '.' + '\n'
+    + 'The price before discount was $' + totalAmount + '.' + '\n'
+    + 'The price after discount is $' + calculateTotal(luckyNumber, totalAmount) + '.');
