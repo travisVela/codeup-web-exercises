@@ -16,61 +16,56 @@
  *
  * Can you refactor your code to use functions?
  */
-var wantToEnterNumber = confirm('Do you want to enter a number');
-var number;
 
-function promptMessage() {
-    if (wantToEnterNumber) {
-        number = prompt('Enter a number');
-        number = parseInt(number);
-        return true;
-    } else {
-        alert('All good.');
-        return false;
-    }
-}
-
-function  isNumber() {
-    if (isNaN(number)){
-        alert('Please enter a number');
-        mainFunction();
-        return false;
-    } else if (number % 2 === 0) {
-        alert('The number is even.');
-    } else {
-        alert('The number is odd.');
-    }
-    return true;
-}
-
-
-function plusOneHundred() {
-    alert('the number plus 100 is ' + (number + 100));
-}
-
-function isPositive() {
-    if (number > 0) {
-        alert('The number is positive.');
-    } else {
-        alert('The number is negative.')
-    }
-}
-function mainFunction() {
-    if (promptMessage()) {
-        if (isNumber()) {
-            plusOneHundred();
-            isPositive();
-        } else {
-            return;
-        }
-    } else {
-        return;
-    }
-}
-mainFunction();
-
-
-
+// var enterNumber = confirm('Do you want to enter a number?');
+// var number;
+// function promptMessage() {
+//     if (enterNumber) {
+//         number = prompt('Enter a number');
+//         number = parseInt(number);
+//         return true;
+//     } else {
+//         alert('All good.')
+//         return false;
+//     }
+// }
+//
+// function isNumber () {
+//     if (isNaN(number)) {
+//         alert('Invalid Input.');
+//         mainFunction();
+//         return false;
+//     } else {
+//         if (number % 2 === 0) {
+//             alert('The number is even')
+//         } else {
+//             alert('The number is odd.')
+//         }
+//         return true;
+//     }
+// }
+//
+// function plusOnehundred() {
+//     alert(number + ' plus 100 is ' + (number + 100));
+// }
+//
+// function isPositive() {
+//     if (number > 0) {
+//         alert(number + ' is positive');
+//     } else {
+//         alert(number + ' is negative');
+//     }
+// }
+//
+// function mainFunction() {
+//     if (promptMessage()) {
+//         if (isNumber()) {
+//             plusOnehundred();
+//             isPositive();
+//         }
+//     }
+// }
+// mainFunction();
 
 /* ########################################################################## */
 
@@ -91,34 +86,35 @@ mainFunction();
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
-function analyzeColor() {
+var color;
+function analyzeColor(color) {
     if (color === 'red') {
-        console.log('Red is the color of fire');
+        return 'Red is the color of fire';
     } else if (color === 'orange') {
-        console.log('Orange is both a color and a fruit.');
+        return 'Orange is both a color and a fruit.';
     } else if (color === 'yellow') {
-        console.log('Yellow is the color of the sun.');
+        return 'Yellow is the color of the sun.';
     } else if (color === 'green') {
-        console.log('Green is the color fo grass.');
+        return 'Green is the color fo grass.';
     } else if (color === 'blue') {
-        console.log('Blue is the color of the sky.');
+        return 'Blue is the color of the sky.';
     } else if (color === 'indigo') {
-        console.log('Indigo girls is a band');
+        return 'Indigo girls is a band';
     } else if (color === 'violet') {
-        console.log('Violet is a color and a flower.');
+        return 'Violet is a color and a flower.';
     } else {
-        console.log('This color is not defined.');
+        return 'This color is not defined.';
     }
 }
 
-// analyzeColor('red');
-// analyzeColor('orange');
-// analyzeColor('yellow');
-// analyzeColor('green');
-// analyzeColor('blue');
-// analyzeColor('indigo');
-// analyzeColor('violet');
-// analyzeColor('purple');
+console.log(analyzeColor('red'));
+console.log(analyzeColor('orange'));
+console.log(analyzeColor('yellow'));
+console.log(analyzeColor('green'));
+console.log(analyzeColor('blue'));
+console.log(analyzeColor('indigo'));
+console.log(analyzeColor('violet'));
+console.log(analyzeColor('purple'));
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -174,35 +170,9 @@ function analyzeColor() {
  * function to show it to the user.
  */
 
-var color = prompt('Enter a color');
-color = color.toLowerCase();
+var enterColor = prompt('Enter a color.');
+alert(analyzeColor(enterColor));
 
-function analyzeColor() {
-    if (color === 'red') {
-        alert('Red is the color of fire');
-    } else if (color === 'orange') {
-        alert('Orange is both a color and a fruit.');
-
-    } else if (color === 'yellow') {
-        alert('Yellow is the color of the sun.');
-
-    } else if (color === 'green') {
-        alert('Green is the color fo grass.');
-
-    } else if (color === 'blue') {
-        alert('Blue is the color of the sky.');
-
-    } else if (color === 'indigo') {
-        alert('Indigo girls is a band');
-
-    } else if (color === 'violet') {
-        alert('Violet is a color and a flower.');
-
-    } else {
-        alert('The color is not defined.');
-    }
-}
-analyzeColor(color);
 
 /* ########################################################################## */
 
@@ -226,7 +196,6 @@ analyzeColor(color);
  * return value.
  */
 
-
 function calculateTotal(luckyNumber, totalAmount) {
     if (luckyNumber === 0) {
         return totalAmount;
@@ -234,7 +203,7 @@ function calculateTotal(luckyNumber, totalAmount) {
         return (totalAmount - (totalAmount * .10)).toFixed(2);
     } else if (luckyNumber === 2) {
         return (totalAmount - (totalAmount * .25)).toFixed(2);
-    } else if (luckyNumber === 3) {
+    } else if  (luckyNumber === 3) {
         return (totalAmount - (totalAmount * .35)).toFixed(2);
     } else if (luckyNumber === 4) {
         return (totalAmount - (totalAmount * .50)).toFixed(2);
@@ -242,12 +211,13 @@ function calculateTotal(luckyNumber, totalAmount) {
         return 0;
     }
 }
+
 console.log(calculateTotal(0, 100)); // returns 100
 console.log(calculateTotal(4, 100)); // returns 50
 console.log(calculateTotal(5, 100)); // returns 0
-console.log(calculateTotal(1, 100));
-console.log(calculateTotal(2, 100));
-console.log(calculateTotal(3, 100));
+console.log(calculateTotal(1, 100)); // returns 90
+console.log(calculateTotal(2, 100)); // returns 75
+console.log(calculateTotal(3, 100)); // returns 65
 
 
 /**
@@ -259,9 +229,10 @@ console.log(calculateTotal(3, 100));
  */
 // Generate a random number between 0 and 6
 var luckyNumber = Math.floor(Math.random() * 6);
-var totalAmount = prompt('What is your total amount?');
-totalAmount = parseInt(totalAmount).toFixed(2);
 
-alert('Your lucky number is ' + luckyNumber + '.' + '\n'
-    + 'The price before discount was $' + totalAmount + '.' + '\n'
-    + 'The price after discount is $' + calculateTotal(luckyNumber, totalAmount) + '.');
+var totalAmount = prompt('What is your bill total?');
+totalAmount = Number(totalAmount).toFixed(2);
+
+alert('Your lucky number is ' + luckyNumber);
+alert('The total before discount was $' + totalAmount);
+alert('The discounted price is $' + calculateTotal(luckyNumber, totalAmount));
