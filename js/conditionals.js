@@ -128,7 +128,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Pass the `randomColor` variable to your function and console.log the results.
  * You should see a different message everytime you refresh the page
  */
-// analyzeColor(randomColor);
+analyzeColor(randomColor);
 
 /**
  * TODO:
