@@ -7,19 +7,24 @@ while (num < 65536) {
     console.log(num);
 }
 
+console.log('\n');
+console.log('=====' + '\n' + 'cones exercise');
+console.log('\n');
+
 var allCones = Math.floor(Math.random() * 50) + 50;
 console.log('all cones ' + allCones);
+console.log('-----');
 do {
     var conesPerCustomer = Math.floor(Math.random() * 5) + 1;
-    // var conesSold = 0;
     console.log('cones per customer ' + conesPerCustomer);
     if (allCones - conesPerCustomer >= 0) {
-        console.log(conesPerCustomer + ' cones sold.' + '\n' + allCones + ' cones left.');
         allCones = allCones - conesPerCustomer;
+        console.log(conesPerCustomer + ' cones sold.' + '\n' + allCones + ' cones left.');
+        console.log('\n');
     } else if ((allCones - conesPerCustomer) < 0) {
-        allCones = conesPerCustomer - allCones;
         console.log('Cannot sell you ' + conesPerCustomer + ' only have ' + allCones);
-        console.log(allCones + ' cones sold.');
+        console.log('I can sell you ' + allCones);
+        allCones -= allCones;
     }
 
 } while (allCones > 0);
