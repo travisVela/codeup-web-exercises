@@ -1,0 +1,224 @@
+:root {
+    --blue: #00ABA9;
+    --red: #e6563b;
+    --orange: #eb9d3a;
+    --green: #7cb06c;
+    --lightgray: #f0f0f0;
+    --darkgray: #e6e6e6;
+
+}
+
+/**************
+*   general   *
+**************/
+
+body{
+    background-color: var(--darkgray);
+    font-family: 'Abel', sans-serif;
+}
+h1 {
+    font-size: 64px;
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+}
+
+
+h2 {
+    font-size: 48px;
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 40px;
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+}
+
+h4 {
+    font-size: 32px;
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+}
+
+h5 {
+    font-size: 28px;
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+}
+
+hr{
+    width: 70%;
+}
+
+.navbar{
+    padding-top: 0;
+}
+
+
+/*************
+*   navbar   *
+*************/
+
+.navbar {
+    margin-bottom: 100px;
+}
+.navbar-brand {
+    height: 50px;
+    margin-bottom: 5px;
+    z-index: 1;
+}
+
+.navbar-brand:hover a {
+    text-decoration: none;
+    color: var(--blue);
+}
+
+.navbar-brand img {
+    width: 105px;
+    height: 105px;
+    margin-top: -30px;
+}
+ .codeup {
+    font-size: 50px;
+}
+.nav-link {
+    font-size: 20px;
+    padding: 8px;
+    color: #000;
+}
+a:hover {
+    color: var(--blue);
+}
+
+/***********
+*   main   *
+***********/
+
+.circle {
+    max-width: 10em;
+    height: 10em;
+    border-radius: 5em;
+    border: 10px solid #fff;
+    color: #fff;
+
+}
+/*   background colors   */
+
+.design {
+    background: var(--red);
+}
+.develop {
+    background: var(--orange);
+}
+.support {
+    background: var(--green);
+}
+.host {
+    background: var(--blue);
+}
+.card {
+    background-color: var(--darkgray);
+    border: none;
+}
+
+/*   badge size   */
+
+.badge{
+    max-height: 18px;
+    max-width: 18px;
+}
+
+/*   featured project   */
+
+.pictures img {
+    border: 10px solid var(--lightgray);
+    border-radius: 5px;
+}
+
+.code-med {
+    display: none
+}
+.fa-twitter {
+    color: #00aced;
+}
+
+
+
+/********************
+*   media queries   *
+********************/
+
+/*   small screen   */
+
+@media screen and (min-width: 540px) {
+    .circle {
+        max-width: 7em;
+        height: 7em;
+        border: 5px solid #fff;
+    }
+}
+
+/*   medium screen   */
+@media screen and  (min-width: 768px) {
+
+    .navbar-brand img {
+        margin-top: -25px;
+    }
+
+    .navbar {
+        padding-top: 8px;
+        margin-bottom: 5px;
+    }
+
+    .navbar-brand {
+        margin-top: -10px;
+    }
+    .codeup {
+        font-size: 40px;
+    }
+    .card {
+        margin-left: 18px;
+
+    }
+}
+
+@media screen and (min-width: 960px) {
+
+
+    main{
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .navbar {
+        margin-bottom: 50px;
+    }
+
+    .code-med {
+        display: inline;
+    }
+
+    .pictures {
+        float: left;
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    .list_pic{
+        width: 64px;
+        height: 64px;
+    }
+    hr {
+        width: 100%;
+    }
+
+    ul {
+        float:left;
+        width:40%;
+    }
+
+}
+
+
+
