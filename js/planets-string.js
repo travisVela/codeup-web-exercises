@@ -27,7 +27,7 @@
      * list. You will need an opening AND closing <ul> tags around the entire
      * string, and <li> tags around each planet.
      */
-    planetsString = planetsArray.join('\n');
+    planetsString = planetsArray.join('<br>');
     console.log(planetsString);
 
     console.log('\n');
@@ -35,13 +35,16 @@
     console.log('======');
     console.log('\n');
 
-    planetsArray = planetsString.split('\n');
-    var planets = '<ul> \n'
+    // planetsArray = planetsString.split('\n');
+    // var planets = '<ul> \n'
+    //
+    // planetsArray.forEach(function(planet) {
+    //     planets += '<li>' + planet + '</li> \n';
+    // });
+    // planets += '</ul>';
 
-    planetsArray.forEach(function(planet) {
-        planets += '<li>' + planet + '</li> \n';
-    });
-    planets += '</ul>';
+    var planets = planetsArray.join('</li><li>');
+    var newString = '<ul><li>' + planets + '</li></ul>';
 
-    console.log(planets);
+    console.log(newString);
 })();
