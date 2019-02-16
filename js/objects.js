@@ -129,10 +129,13 @@
     console.log('\n');
     console.log('=======');
 
+
     books.forEach(function (book, index) {
         console.log('Book # ' + (index + 1) + '\n'
             + 'Title: ' + book.title + '\n'
-            + 'Author: ' + book.author.firstName + ' ' + book.author.lastName)
+            + 'Author: ' + book.author.firstName + ' ' + book.author.lastName + '\n'
+            + '---')
+
     });
 
 
@@ -143,6 +146,7 @@
      *   name and returns a book object with the properties described
      *   previously. Refactor your code that creates the books array to instead
      *   use your function.
+
      * - Create a function named `showBookInfo` that accepts a book object and
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
@@ -153,13 +157,43 @@
     console.log('=======');
     console.log('\n');
 
+    var books = [];
     function createBook(title, authorFirstName, authorLastName) {
         return books.push({
-            title: title, author: {
+            title: title,
+            author: {
                 firstName: authorFirstName,
                 lastName: authorLastName
             }
         });
     }
 
+    createBook('Watership Down', 'Richard', 'Adams');
+    createBook('A Brave New World', 'Aldous', 'Huxley');
+    createBook('Harry Potter and the Prisoner of Azkaban', 'J.K.', 'Rowling');
+    createBook('A Brief History ofTime', 'Stephen', 'Hawking');
+    createBook('The Old Man and the Sea', 'Ernest', 'Hemingway');
+    createBook('Harry Potter and the Sorcerer\'s Stone', 'J.K.', 'Rowling');
+    createBook('The Magic Strings of Frankie Presto', 'Mitch', 'Albom');
+    createBook('Atlas Shrugged', 'Ayn', 'Rand');
+    createBook('Stranger in a Strange Land', 'Robert', 'Heinlein');
+    console.log(books);
+
+    function showBookInfo(input) {
+        for (var i = 0; i < books.length; i++) {
+            if (input === books[i].title) {
+                return 'Found a match!' + '\n'
+                + '========' + '\n'
+                + 'Book # ' + (books.indexOf(books[i]) + 1) + '\n'
+                + 'Title: ' + books[i].title + '\n'
+                + 'Author: ' + books[i].author.firstName + ' ' + books[i].author.lastName
+                + '\n' + '\n';
+            }
+        }
+    }
+
+    console.log(showBookInfo('Watership Down'));
+    console.log(showBookInfo('A Brave New World'));
+    console.log(showBookInfo('Stranger in a Strange Land'));
 })();
+
