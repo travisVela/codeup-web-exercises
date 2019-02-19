@@ -13,7 +13,10 @@
      */
     var person = {
         firstName: 'Travis',
-        lastName: 'Vela'
+        lastName: 'Vela',
+        sayHello: function() {
+            return 'Hello, from ' + this.firstName + ' ' + this.lastName + '!'
+        }
     };
 
     /**
@@ -25,9 +28,9 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
-    person.sayHello = function() {
-        return 'Hello from ' + person.firstName;
-    };
+    // person.sayHello = function() {
+    //     return 'Hello from ' + person.firstName;
+    // };
     console.log(person.sayHello());
 
     /** TODO:
@@ -49,14 +52,12 @@
         {name: 'Ryan', amount: 250},
         {name: 'George', amount: 320}
     ];
-    var discount;
+    var discount = 0;
     var reducedAmount;
 
     shoppers.forEach(function(shopper) {
         if (shopper.amount > 200) {
             discount = (shopper.amount * .12);
-        } else {
-            discount = 0;
         }
         reducedAmount = shopper.amount.toFixed(2) - discount;
         console.log('Customer: ' + shopper.name +  '\n'
@@ -158,33 +159,85 @@
     console.log('\n');
 
     var books = [];
+    var dateAvailable;
+    var checkedOut = [];
+
+    // function to create book objects and add to books array
     function createBook(title, authorFirstName, authorLastName) {
         return books.push({
             title: title,
             author: {
                 firstName: authorFirstName,
                 lastName: authorLastName
-            }
+            },
+            keywords: [],
+            available: true,
+            dateAvailable: new Date()
         });
+    }
+
+    // function to add book to checkedOut array and change to not available
+    books.lend = function(bookRental) {
+        for (var i = 0; i < books.length; i++) {
+            if (books[i].title === bookRental) {
+                checkedOut.push(bookRental);
+                books[i].available = false;
+                books[i].dateAvailable.setDate(books[i].dateAvailable.getDate() + 14);
+            }
+        }
+    };
+
+    // function to remove book from checkedOut array and change to available
+    books.receive = function(bookReturn) {
+        for (var i = 0; i < checkedOut.length; i++) {
+            if (checkedOut[i] === bookReturn) {
+                var remove = checkedOut.indexOf(bookReturn);
+                if (remove !== 1) {
+                    checkedOut.splice(remove, 1);
+                }
+                books[i].available = true;
+            }
+        }
+        return dateAvailable = Date.now();
+    };
+
+    // function to select book from books array
+    function selectBook(book) {
+        for (var i = 0; i < books.length; i++) {
+            if (books[i] === book) {
+                return books[i];
+            }
+        }
     }
 
     createBook('Watership Down', 'Richard', 'Adams');
     createBook('A Brave New World', 'Aldous', 'Huxley');
     createBook('Harry Potter and the Prisoner of Azkaban', 'J.K.', 'Rowling');
-    createBook('A Brief History ofTime', 'Stephen', 'Hawking');
+    createBook('A Brief History of  Time', 'Stephen', 'Hawking');
     createBook('The Old Man and the Sea', 'Ernest', 'Hemingway');
     createBook('Harry Potter and the Sorcerer\'s Stone', 'J.K.', 'Rowling');
     createBook('The Magic Strings of Frankie Presto', 'Mitch', 'Albom');
     createBook('Atlas Shrugged', 'Ayn', 'Rand');
     createBook('Stranger in a Strange Land', 'Robert', 'Heinlein');
-    console.log(books);
+    console.log(selectBook('The Magic Strings of Frankie Presto'));
 
+    // test cases
+    books.lend("Watership Down");
+    books.lend('The Magic Strings of Frankie Presto');
+    console.log('Books lent out: ' + checkedOut);
+
+    books.receive('Watership Down');
+    console.log('Books checked out: ' + checkedOut);
+
+
+
+    // function to display book info
     function showBookInfo(input) {
         for (var i = 0; i < books.length; i++) {
             if (input === books[i].title) {
                 return 'Found a match!' + '\n'
                 + '========' + '\n'
-                + 'Book # ' + (books.indexOf(books[i]) + 1) + '\n'
+                + 'Book# ' + (books.indexOf(books[i]) + 1) + '\n'
                 + 'Title: ' + books[i].title + '\n'
                 + 'Author: ' + books[i].author.firstName + ' ' + books[i].author.lastName
                 + '\n' + '\n';
@@ -192,8 +245,34 @@
         }
     }
 
+    // test cases
     console.log(showBookInfo('Watership Down'));
     console.log(showBookInfo('A Brave New World'));
     console.log(showBookInfo('Stranger in a Strange Land'));
+
+// BONUS 1 (expanding on the books object exercise):
+//
+// Add a property "keywords" that contains an array of possible genres the book may be categorized by
+// Add a boolean property "available" and set it to true
+// Add a dateAvailable property that has a string of the date/time when the book will be available
+// Add a method lend() that...
+// - changes the available property to false if it is not already false
+// - sets the dateAvailable to a date exactly two weeks from when the lend() method is called
+// (to do this, research the JS Date object and use methods from it in your code)
+// Add a method receive() that...
+// - changes the available property to true
+// - changes the dateAvailable property to the string "now"
+
+
+// BONUS 2 (expanding on the books object exercise):
+//
+// Create an application to take in user input to build the books array of objects.
+//     Allow the user to continue adding books or to finish adding books.
+//     Once the books have been added, output the books array in the console.
+//
+//     Allow a user to delete a book or a group of books by title or author last name
+//
+// Allow a user to edit a book by index number in the books array
+
 })();
 
