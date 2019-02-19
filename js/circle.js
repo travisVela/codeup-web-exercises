@@ -9,15 +9,16 @@
             // TODO: complete this method
             // hint: area = pi * radius^2
             // TODO: return the proper value
-            return Math.PI * (Math.pow(this.radius, 2));
+            var area =Math.PI * (Math.pow(this.radius, 2));
+            return area;
         },
         logInfo: function (doRounding) {
             // TODO: complete this method.
 
             // If doRounding is true, round the result to the nearest integer.
             // Otherwise, output the complete value
-            if (doRounding === true) {
-                console.log('Area rounded to whole number: ' + Math.round(circle.getArea()));
+            if (doRounding) {
+                console.log('whole number: ' + Math.round(circle.getArea()));
             } else {
                 console.log("Area of a circle with radius: " + this.radius + ", is: " + circle.getArea());
             }
