@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Maps</title>
+
+    <style type="text/css">
+        .map-canvas {
+            width: 770px;
+            height: 481px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="map-canvas1" class="map-canvas"></div>
+    <br>
+    <div id="map-canvas2" class="map-canvas"></div>
+    <br>
+    <div id="map-canvas3" class="map-canvas"></div>
+    <br>
+    <div id="map-canvas4" class="map-canvas"></div>
+
+<!-- Load the Google Maps API [DON'T FORGET TO USE A KEY] -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBV-aBbUM6lCiK47fgkKe8OXAj6AuCMdQU"></script>
+<script type="text/javascript">
+    (function() {
+        'use strict';
+        var mapOptions = {
+            zoom: 19,
+            // center: {
+            //     lat:  29.426791,
+            //     lng: -98.489602
+            // }
+        };
+
+        // map 1 of Julian's
+        var map = new google.maps.Map(document.getElementById('map-canvas1'), mapOptions);
+
+        var address = '6462 N New Braunfels Ave, San Antonio, TX 78209';
+
+        // geocoder init
+        var geocoder = new google.maps.Geocoder();
+
+        // set address of map 1
+        geocoder.geocode({'address': address}, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                map.setCenter(results[0].geometry.location);
+            } else {
+                alert('Geocoding was not successful - STATUS: ' + status);
+            }
+        });
+
+        // map 2 zoom 5
+        var map2 = new google.maps.Map(document.getElementById('map-canvas2'),{zoom:5});
+
+        var address2 = '600 Navarro St #350, San Antonio, TX 78205';
+        // set address of map 2
+        geocoder.geocode({'address': address}, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                map2.setCenter(results[0].geometry.location);
+            } else {
+                alert('Geocoding for map 2 was not successful - STATUS: ' + status);
+            }
+        });
+
+        // map 2 zoom 15
+        var map3 = new google.maps.Map(document.getElementById('map-canvas3'), {zoom:15});
+        geocoder.geocode({'address': address}, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                map3.setCenter(results[0].geometry.location);
+            } else {
+                alert('Geocoding for map 3 was not successful - STATUS: ' + status);
+            }
+        });
+
+        // map 2 zoom 20
+        var map4 = new google.maps.Map(document.getElementById('map-canvas4'), {zoom:20});
+        geocoder.geocode({'address': address}, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                map4.setCenter(results[0].geometry.location);
+            } else {
+                alert('Geocoding for map 4 was not successful - STATUS: ' + status);
+            }
+        });
+
+
+    })();
+</script>
+</body>
+</html>
