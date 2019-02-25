@@ -10,36 +10,43 @@
 
 <div id='map' style='width: 100%; height: 500px;'></div>
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
 <script src="js/keys.js"></script>
 <script>
     mapboxgl.accessToken = mapboxToken;
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v9',
-        zoom: 9,
-        center: [-98.458860, 29.489577]
+
+    var map;
+
+    geocode('6462 N New Braunfels Ave, San Antonio, TX 78209', mapboxToken).then(function (data){
+        map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            zoom: 9,
+            center: data
+        });
+        setTimeout(function () {
+            map.setZoom(5);
+        }, 5000);
+
+        setTimeout(function () {
+            map.setZoom(15);
+        }, 10000);
+
+        setTimeout(function () {
+            map.setZoom(20);
+        }, 15000);
+
+        var marker = new mapboxgl.Marker();
+        marker.setLngLat(map.getCenter());
+        marker.addTo(map);
+
+        var popup = new mapboxgl.Popup();
+        popup.setHTML("<h1>Julian's Pizza</h1>");
+
+        marker.setPopup(popup);
     });
 
-    setTimeout(function () {
-        map.setZoom(5);
-    }, 5000);
 
-    setTimeout(function () {
-        map.setZoom(15);
-    }, 10000);
-
-    setTimeout(function () {
-        map.setZoom(20);
-    }, 15000);
-
-    var marker = new mapboxgl.Marker();
-    marker.setLngLat(map.getCenter());
-    marker.addTo(map);
-
-    var popup = new mapboxgl.Popup();
-    popup.setHTML("<h1>Julian's Pizza</h1>");
-
-    marker.setPopup(popup);
 </script>
 </body>
 </html>
