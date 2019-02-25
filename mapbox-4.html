@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox 4</title>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+    <div id='map' style='width: 100%; height: 500px;'></div>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+    <script src="js/keys.js"></script>
+    <script src="js/mapbox-geocoder-utils.js"></script>
+    <script>
+        mapboxgl.accessToken = mapboxToken;
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            zoom: 8,
+            center: [ -98.4936282, 29.4241219]
+        });
+
+        //zion
+        var zion;
+        geocode("7XXF+7F Springdale, Utah", mapboxToken).then(function (data){
+            console.log(data);
+            zion = data;
+            setTimeout(function () {
+                map.setCenter(zion);
+            }, 5000);
+
+        });
+
+        //Honolulu
+        var honolulu;
+        reverseGeocode({lng: -157.8583, lat: 21.3069}, mapboxToken).then(function (data) {
+            console.log(data);
+            honolulu = data;
+            geocode(honolulu, mapboxToken).then(function (data) {
+                honolulu = data;
+            });
+            setTimeout(function (){
+                map.setCenter(honolulu);
+            }, 10000);
+
+        });
+
+    </script>
+
+</body>
+</html>
