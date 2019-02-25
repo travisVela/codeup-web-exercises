@@ -1,0 +1,23 @@
+body {
+    background-color: #eeeeee;
+}
+
+#calculator {
+    background-color: #333;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.btn {
+    border: 1px solid #eee;
+    width: 100%;
+    color: #fff;
+}
+
+.btn:hover {
+    background-color: #fff;
+    color: #333;
+}
+input {
+    text-align: center;
+}
