@@ -15,36 +15,81 @@
 <script>
     mapboxgl.accessToken = mapboxToken;
 
-    var map;
-
-    geocode('6462 N New Braunfels Ave, San Antonio, TX 78209', mapboxToken).then(function (data){
-        map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v9',
-            zoom: 9,
-            center: data
-        });
-        setTimeout(function () {
-            map.setZoom(5);
-        }, 5000);
-
-        setTimeout(function () {
-            map.setZoom(15);
-        }, 10000);
-
-        setTimeout(function () {
-            map.setZoom(20);
-        }, 15000);
-
-        var marker = new mapboxgl.Marker();
-        marker.setLngLat(map.getCenter());
-        marker.addTo(map);
-
-        var popup = new mapboxgl.Popup();
-        popup.setHTML("<h1>Julian's Pizza</h1>");
-
-        marker.setPopup(popup);
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 10,
+        center: [ -98.4936282, 29.4241219]
     });
+
+    var places = [
+        {
+            name: 'Julian\'s',
+            address: '6462 N New Braunfels Ave, San Antonio, TX 78209',
+            message: 'Pizza • Pasta • Good times',
+            suggestion: 'Everything here is amazing!!'
+        },
+        {
+            name: 'Niki\'s Tokyo Inn',
+            address: '819 W Hildebrand Ave, San Antonio, TX 78212',
+            message: 'Old school Japanese eatery and sushi bar',
+            suggestion: 'Sake is great and the sushi is aces!'
+        },
+        {
+            name: 'Kimura',
+            address: '152 E Pecan St #102, San Antonio, TX 78205',
+            message: 'Ramen • Sushi • Happy hour',
+            suggestion: 'Everybody loves Ramen.'
+        },
+        {
+            name: 'Paesanso\'s',
+            address: '555 E Basse Rd, San Antonio, TX 78209',
+            message: 'Happy hour food • Great dessert • Upscale',
+            suggestion: 'That shrimp paesano though!'
+        }
+    ];
+    var marker;
+    var popup;
+
+    places.forEach(function(place) {
+        geocode(place.address, mapboxToken).then(function(data) {
+            marker = new mapboxgl.Marker()
+                .setLngLat(data).addTo(map);
+            popup = new mapboxgl.Popup()
+                .setHTML('<h3>' + place.name  + '</h3><p>' + place.message + '</p><p><em>' + place.suggestion + '</em></p>');
+            marker.setPopup(popup);
+        });
+    });
+
+
+    // geocode('6462 N New Braunfels Ave, San Antonio, TX 78209', mapboxToken).then(function (data){
+    //     map = new mapboxgl.Map({
+    //         container: 'map',
+    //         style: 'mapbox://styles/mapbox/streets-v9',
+    //         zoom: 9,
+    //         center: data
+    //     });
+    //     setTimeout(function () {
+    //         map.setZoom(5);
+    //     }, 5000);
+    //
+    //     setTimeout(function () {
+    //         map.setZoom(15);
+    //     }, 10000);
+    //
+    //     setTimeout(function () {
+    //         map.setZoom(20);
+    //     }, 15000);
+    //
+    //     var marker = new mapboxgl.Marker();
+    //     marker.setLngLat(map.getCenter());
+    //     marker.addTo(map);
+    //
+    //     var popup = new mapboxgl.Popup();
+    //     popup.setHTML("<h1>Julian's Pizza</h1>");
+    //
+    //     marker.setPopup(popup);
+    // });
 
 
 </script>
