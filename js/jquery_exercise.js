@@ -1,6 +1,10 @@
 "use strict";
 
 $(document).ready(function() {
-    $('.codeup').css('border', '1px solid #f00');
+    $('li').css('font-size', '20px');
+    $('h1').css('background-color', '#ffff0050');
+    $('p').css('background-color', '#ffff0050');
+    $('li').css('background-color', '#ffff0050');
+    alert($('h1').html());
 });
 
