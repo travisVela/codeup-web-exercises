@@ -1,11 +1,23 @@
 "use strict";
 
 $(document).ready(function() {
-    $('li').css('font-size', '20px');
-    // $('h1').css('background-color', '#ffff0050');
-    // $('p').css('background-color', '#ffff0050');
-    // $('li').css('background-color', '#ffff0050');
-    $('h1, p, li').css('background-color', '#ffff0050');
-    alert($('h1').html());
+    $('h1').css('cursor', 'pointer');
+    $('h1').click(function() {
+        $(this).css('background-color', '#eee');
+    });
+
+    $('p').css('cursor', 'pointer');
+    $('p').dblclick(function() {
+        $(this).css('font-size', '18px');
+    });
+
+    $('li').css('cursor', 'hover');
+    $('li').hover(
+        function() {
+        $(this).css('color', '#f00');
+        },
+        function() {
+            $(this).css('color', 'black');
+        })
 });
 
