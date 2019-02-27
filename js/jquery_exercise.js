@@ -1,11 +1,6 @@
 "use strict";
 
 $(document).ready(function() {
-    // alert( 'The DOM has finished loading!' );
-
-    // alert($('#hello').html());
-    alert($('#firstItem').html());
-
-
+    $('.codeup').css('border', '1px solid #f00');
 });
 
