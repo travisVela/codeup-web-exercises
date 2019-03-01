@@ -2,9 +2,73 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>jQuery FAQ</title>
+    <style>
+        .invisible {
+            visibility: hidden;
+
+        }
+        .highlight {
+            background-color: #ffff0050;
+        }
+        body {
+            margin: 0 100px 100px 100px;
+        }
+        dd {
+            height: 50px;
+            width: 40%;
+            border: 1px solid #00003370;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+
+        }
+    </style>
 </head>
 <body>
+<dl>
+    <dt><h3>FAQ 1</h3></dt>
+    <dd class="invisible"><em>Answer 1</em></dd>
+    <dt><h3>FAQ 2</h3></dt>
+    <dd class="invisible"><em>Answer 2</em></dd>
+    <dt><h3>FAQ 3</h3></dt>
+    <dd class="invisible"><em>Answer 3</em></dd>
+    <dt><h3>FAQ 4</h3></dt>
+    <dd class="invisible"><em>Answer 4</em></dd>
+    <dt><h3>FAQ 5</h3></dt>
+    <dd class="invisible"><em>Answer 5</em></dd>
+    <dt><h3>FAQ 6</h3></dt>
+    <dd class="invisible"><em>Answer 6</em></dd>
+    <dt><h3>FAQ 7</h3></dt>
+    <dd class="invisible"><em>Answer 7</em></dd>
+    <dt><h3>FAQ 8</h3></dt>
+    <dd class="invisible"><em>Answer 8</em></dd>
+    <dt><h3>FAQ 9</h3></dt>
+    <dd class="invisible"><em>Answer 9</em></dd>
+    <dt><h3>FAQ 10</h3></dt>
+    <dd class="invisible"><em>Answer 10</em></dd>
+</dl>
+<a href="#" id="show">Show answers</a>
 
+<script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous">
+</script>
+<script>
+    "use strict";
+    $(document).ready(function() {
+
+        $('#show').click(function(event) {
+            event.preventDefault();
+            $('dd').toggleClass('invisible');
+        });
+        $('dt').click(function() {
+            $(this).toggleClass('highlight');
+        })
+
+
+    });
+</script>
 </body>
 </html>
