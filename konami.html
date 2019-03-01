@@ -8,8 +8,30 @@
 <body>
 <div class="container">
 
-    <div class="row mt-5">
-        <h1 class="mx-auto display-4">Konami Code</h1>
+    <div id="header" class="row mt-5">
+        <div class="col d-flex justify-content-start">
+            <div id="x" class="row d-flex justify-content-center">
+                <div class="col invisible x display-4">X</div>
+                <div class="col invisible x display-4">X</div>
+                <div class="col invisible x display-4">X</div>
+            </div>
+        </div>
+        <div id="konami" class="col">
+            <h1 class="mx-auto display-4">Konami Code</h1>
+        </div>
+        <div class="col"></div>
+    </div>
+    <div id="correct" class="row justify-content-center m-4">
+        <div id="1" class="col display-2 d-flex justify-content-center match"></div>
+        <div id="2" class="col display-2 d-flex justify-content-center match"></div>
+        <div id="3" class="col display-2 d-flex justify-content-center match"></div>
+        <div id="4" class="col display-2 d-flex justify-content-center match"></div>
+        <div id="5" class="col display-2 d-flex justify-content-center match"></div>
+        <div id="6" class="col display-2 d-flex justify-content-center match"></div>
+        <div id="7" class="col display-2 d-flex justify-content-center match"></div>
+        <div id="8" class="col display-2 d-flex justify-content-center match"></div>
+        <div id="9" class="col display-2 d-flex justify-content-center match"></div>
+        <div id="10" class="col display-2 d-flex justify-content-center match"></div>
     </div>
 
 </div>
@@ -22,6 +44,7 @@
 
     var code = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
     var count = 0;
+    var wrong = 0;
     var jumbotron = $('<div id="contra" class="row mt-5 d-flex justify-content-center"></div>');
     var timer = $('<div id="countDown" class="row d-flex justify-content-center align-items-center">' +
         '<h1 id="gameOver" class="col-12 d-flex justify-content-center display-4">Game Over</h1>' +
@@ -31,22 +54,28 @@
 
     $(document).on('keyup', function(e) {
         if (count === 10) {
-            $('.row').after(jumbotron);
-            $('#contra').after('<div id="lives" class="col mt-4 d-flex justify-content-center"><h1 class="display-4">You have added 30 lives!!</h1></div>');
+            $('#header').after(jumbotron);
+            $('#contra').after('<div id="lives" class="row mt-4 justify-content-center"><h1 class="text-center display-4">You have added 30 lives!!</h1></div>');
             count = 0;
             setTimeout(function() {
                 $('#lives').after(reset);
             }, 2000);
 
         } else if (e.which != code[count]) {
-            $('body').before(timer);
-            setTimeout(function() {
-                $('#gameOver').after(reset);
-            }, 2000);
-            count = 0;
+            wrong++;
+            $('#x div:nth-child(' + wrong + ')').toggleClass('invisible');
+            if (wrong >= 3) {
+                $('body').before(timer);
+                setTimeout(function () {
+                    $('#gameOver').after(reset);
+                }, 2000);
+                count = 0;
+            }
         } else if (e.which == code[count]) {
             count++;
+            $('#correct div:nth-child('+ count + ')').html('*');
         }
+
 
     });
 
