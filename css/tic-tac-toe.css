@@ -1,0 +1,30 @@
+body {
+    background-color: #333;
+    color: #fff;
+}
+#landing {
+    height: 100vh;
+    width: 100%;
+}
+.invisible {
+    visibility: hidden;
+}
+
+#game {
+    display: none;
+}
+#board {
+    height: 90vh;
+}
+#game .col {
+    height: 150px;
+    max-width: 150px;
+}
+
+.borderRight {
+    border-right: 5px solid #555;
+}
+
+.borderBottom, .borderTop {
+    border-bottom: 5px solid #555;
+}
