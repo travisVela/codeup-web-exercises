@@ -1,12 +1,16 @@
+#landing {
+    height: 90vh;
+    width: 100%;
+}
 #contra {
     background: url('../img/contra.png') no-repeat center;
     background-size: contain;
     height: 300px;
     width: 100%;
 }
-#countDown {
-    background: #333;
-    height: 500px;
+#gameOver {
+    background: #333333;
+    height: 70vh;
     width: 100%;
     color: #fff;
 }
@@ -15,4 +19,7 @@
 }
 .invisible {
     visibility: hidden;
+}
+.blink {
+    background-color: #ff0000;
 }
