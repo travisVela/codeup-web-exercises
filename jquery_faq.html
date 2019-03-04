@@ -107,7 +107,11 @@
             $(this).next().children().css('font-weight', 'bold');
         });
 
-    //
+    //ul blue
+        $('li').on('click', function() {
+            $(this).parent().children().first().css('color', 'blue');
+        })
+
     });
 </script>
 </body>
