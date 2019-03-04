@@ -100,7 +100,14 @@
             $('ul').each(function(i, e) {
                 $(this).children().last().css('background', 'yellow');
             })
-        })
+        });
+
+    //bold li when h3 clicked
+        $('h3').on('click', function() {
+            $(this).next().children().css('font-weight', 'bold');
+        });
+
+    //
     });
 </script>
 </body>
