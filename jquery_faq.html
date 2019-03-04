@@ -29,6 +29,9 @@
             padding: 20px;
             margin-top: 30px;
         }
+        .hide {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -63,14 +66,14 @@
 
 
 <h3>Zion National Park</h3>
-<ul id="zion">
+<ul id="zion" class="hide">
     <li>Before it was a national park, Zion was a national monument, and it’s name wasn’t Zion.</li>
     <li>Zion is home to one of the greatest engineering feats of modern times. </li>
     <li> Zion is more than just slot canyons and amazing hikes -- it also protects archeological sites.</li>
     <li>Zion’s Angels Landing provides spectacular views, but it’s one of the world’s most dangerous.</li>
 </ul>
 <h3>Arches National Park</h3>
-<ul id="arches">
+<ul id="arches" class="hide">
     <li>The park has over 2,000 natural stone arches, in addition to hundreds of soaring pinnacles, massive fins and giant balanced rocks.</li>
     <li>It contains the highest density of natural arches in the world.</li>
     <li>Arches National Park covers an area of 310 square kilometers (120 square miles) or 31,031 hectares (76,679 acres).</li>
@@ -78,7 +81,7 @@
         1,245 meters (4,085 feet) at the visitor center.</li>
 </ul>
 <h3>Everglades National Park</h3>
-<ul id="everglades">
+<ul id="everglades" class="hide">
     <li>Largest continuous stand of sawgrass prairie in North America.
     </li>
     <li>Predominant water recharge area for all of South Florida through the Biscayne aquifer.</li>
@@ -126,6 +129,11 @@
     //hide newsletter div on click
         $('#x').on('click', function(){
             $('#newsletter').hide();
+        });
+
+    //show ul elements
+        $('h3').on('click', function() {
+            $(this).next().slideToggle(500);
         })
 
     });
