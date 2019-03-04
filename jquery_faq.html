@@ -74,6 +74,9 @@
     <li>Home of thirteen endangered and ten threatened species.</li>
     <li>Largest mangrove ecosystem in the western hemisphere.</li>
 </ul>
+<br>
+
+<button id="yellow">Change to yellow</button>
 
 <script
         src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -90,9 +93,14 @@
         });
         $('dt').click(function() {
             $(this).toggleClass('highlight');
+        });
+
+    //change last li to yellow
+        $('#yellow').on('click', function() {
+            $('ul').each(function(i, e) {
+                $(this).children().last().css('background', 'yellow');
+            })
         })
-
-
     });
 </script>
 </body>
