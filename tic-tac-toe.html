@@ -26,23 +26,51 @@
 <!--   game page   -->
 
 <div id="game" class="container mt-5">
+    <div class="row mb-5">
+        <div id="players" class="col-2"></div>
+        <div class="col x d-flex justify-content-center mx-4 align-items-center highlight">
+            X   wins:
+        </div>
+        <div class="col o d-flex justify-content-center align-items-center mx-4">
+            O   wins:
+        </div>
+    </div>
     <div id="board" class="row d-flex justify-content-center align-items-center">
-       <div id="players" class="col-2"></div>
         <div class="col-8">
-            <div class="row d-flex justify-content-center">
-                <div class="col play borderBottom borderRight display-4 d-flex justify-content-center align-items-center"></div>
-                <div class="col play borderBottom borderRight display-4 d-flex justify-content-center align-items-center"></div>
-                <div class="col play borderBottom display-4 d-flex justify-content-center align-items-center"></div>
+            <div class="row d-flex justify-content-center gameRow">
+                <div id="1" class="col play borderBottom borderRight display-4 d-flex justify-content-center align-items-center"></div>
+                <div id="2" class="col play borderBottom borderRight display-4 d-flex justify-content-center align-items-center"></div>
+                <div id="3" class="col play borderBottom display-4 d-flex justify-content-center align-items-center"></div>
             </div>
-            <div class="row d-flex justify-content-center">
-                <div class="col play borderBottom borderRight display-4 d-flex justify-content-center align-items-center"></div>
-                <div class="col play borderBottom borderRight display-4 d-flex justify-content-center align-items-center"></div>
-                <div class="col play borderBottom display-4 d-flex justify-content-center align-items-center"></div>
+            <div class="row d-flex justify-content-center gameRow">
+                <div id="4" class="col play borderBottom borderRight display-4 d-flex justify-content-center align-items-center"></div>
+                <div id="5" class="col play borderBottom borderRight display-4 d-flex justify-content-center align-items-center"></div>
+                <div id="6" class="col play borderBottom display-4 d-flex justify-content-center align-items-center"></div>
             </div>
-            <div class="row d-flex justify-content-center">
-                <div class="col play borderRight display-4 d-flex justify-content-center align-items-center"></div>
-                <div class="col play borderRight display-4 d-flex justify-content-center align-items-center"></div>
-                <div class="col play  display-4 d-flex justify-content-center align-items-center"></div>
+            <div class="row d-flex justify-content-center gameRow">
+                <div id="7" class="col play borderRight display-4 d-flex justify-content-center align-items-center"></div>
+                <div id="8" class="col play borderRight display-4 d-flex justify-content-center align-items-center"></div>
+                <div id="9" class="col play  display-4 d-flex justify-content-center align-items-center"></div>
+            </div>
+        </div>
+    </div>
+
+    <!--   Modal   -->
+    <div class="modal fade" id="winner" tabindex="-1" role="dialog" aria-labelledby="winnerPopup" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="winnerPopup">Awesome Job!!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body display-4">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="restart" class="btn btn-secondary" data-dismiss="modal">Play Again?</button>
+                </div>
             </div>
         </div>
     </div>
