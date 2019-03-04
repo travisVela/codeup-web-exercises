@@ -32,12 +32,28 @@
         .hide {
             display: none;
         }
+        #signUp {
+            border: 1px solid #333;
+            color: #eee;
+            height: 100px;
+            width: 50%;
+            background-color: #333;
+            text-align: center;
+            margin-top: 30px;
+        }
+        #signUp:hover {
+            background: #eee;
+            color: #333;
+        }
     </style>
 </head>
 <body>
 <div id="newsletter">
     <h1>Would you like to sign up for our newsletter?</h1>
     <span id="x">X</span>
+</div>
+<div id="signUp" class="hide">
+    <h2>Would you like to register?</h2>
 </div>
 
 <dl>
@@ -134,7 +150,11 @@
     //show ul elements
         $('h3').on('click', function() {
             $(this).next().slideToggle(500);
-        })
+        });
+    //show h2 sign up element
+        setTimeout(function() {
+            $('#signUp').fadeIn(1000);
+        }, 8000);
 
     });
 </script>
