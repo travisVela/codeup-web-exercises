@@ -34,7 +34,7 @@
 <body>
 <div id="newsletter">
     <h1>Would you like to sign up for our newsletter?</h1>
-    <span>X</span>
+    <span id="x">X</span>
 </div>
 
 <dl>
@@ -121,6 +121,11 @@
     //ul blue
         $('li').on('click', function() {
             $(this).parent().children().first().css('color', 'blue');
+        });
+
+    //hide newsletter div on click
+        $('#x').on('click', function(){
+            $('#newsletter').hide();
         })
 
     });
