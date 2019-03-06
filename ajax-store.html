@@ -6,14 +6,26 @@
     <style>
         #products {
             border: 1px solid #ddd;
+        }
 
+        .jumbotron {
+            height: 300px;
+            width: 100%;
+        }
+        a:hover {
+            color: lightskyblue;
         }
     </style>
 </head>
 <body>
+<div class="row jumbotron">
+    <div class="col d-flex justify-content-center align-items-center">
+        <h1 class="display-1">Hardware Store</h1>
+    </div>
+</div>
 <div class="container">
     <div class="row d-flex justify-content-center mt-5">
-        <h1>Tools & Stuff</h1>
+        <h1 class="display-4">Tools & Stuff</h1>
     </div>
     <div class="row my-3">
         <table id="products" class="col table table-hover table-dark">
@@ -51,6 +63,15 @@
     //             its contents and fields
     //       HINT: You will want to target #insertProducts for your new HTML elements
 
+    function categoryList(cats) {
+        var html ='<ul>';
+        for (var i = 0; i < cats.length; i++) {
+            html += '<li><a href="#">' +  cats[i]  + '</a></li>';
+        }
+        html += '</ul>';
+        return html;
+    }
+
     function success() {
         $.ajax('data/inventory.json').done(function (data) {
             $('#insertProducts').html('');
@@ -59,7 +80,7 @@
                     '<td>' + data[i].title + '</td>' +
                     '<td>' + data[i].quantity + '</td>' +
                     '<td>' + data[i].price + '</td>' +
-                    '<td>' + data[i].categories + '</td>' +
+                    '<td>' + categoryList(data[i].categories) + '</td>' +
                     '</tr>')
             }
         })
@@ -68,6 +89,7 @@
     $('#refresh').on('click', function() {
         success();
     })
+    success();
 
 })();
 </script>
