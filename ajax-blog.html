@@ -2,9 +2,126 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Ajax Blog</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/ajax-blog.css">
 </head>
 <body>
 
+<!--   navbar   -->
+<ul class="nav justify-content-center">
+    <li class="nav-item">
+        <a class="nav-link active" href="#">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">News</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Archive</a>
+    </li>
+</ul>
+
+<!--   header   -->
+<div class="row jumbotron">
+    <h1 class="col d-flex justify-content-center align-items-center display-4">
+        My Blog About Stuff
+    </h1>
+</div>
+
+<!--   content   -->
+
+<div id="posts" class="container">
+
+</div>
+<!-- Modal -->
+<!--<div class="modal fade" id="post" tabindex="-1" role="dialog" aria-labelledby="postContent" aria-hidden="true">-->
+    <!--<div class="modal-dialog" role="document">-->
+        <!--<div class="modal-content">-->
+            <!--<div class="modal-header">-->
+                <!--<h5 class="modal-title" id="postContent">Modal title</h5>-->
+                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+                    <!--<span aria-hidden="true">&times;</span>-->
+                <!--</button>-->
+            <!--</div>-->
+            <!--<div class="modal-body">-->
+                <!--...-->
+            <!--</div>-->
+            <!--<div class="modal-footer">-->
+                <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+                <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>
+$().ready(function() {
+'use strict';
+    var request = $.get('data/blog.json');
+
+    //generate category list
+    function cats(cats){
+        var html = '<ul class="list-inline">';
+        for (var i = 0; i < cats.length; i++) {
+            html += '<li class="list-inline-item"><a href="#">' + cats[i] + '</a></li>';
+        }
+        html += '</ul>';
+        return html;
+    }
+
+    //build button and modal
+    function buildModal(data) {
+        console.log(data);
+        var html = '';
+            html += '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#post">' +  '   Read more' + '</button>';
+            html += '<div class="modal fade" id="post" tabindex="-1" role="dialog" aria-labelledby="postContent"    aria-hidden="true">';
+            html += '<div class="modal-dialog" role="document">';
+            html += '<div class="modal-content">';
+            html += '<div class="modal-header">';
+            html += '<h5 class="modal-title" id="postContent">' + data.title + '</h5>';
+            html += '<button type="button" class="close" data-dismiss="modal" aria-label="Close">\n' +
+                '<span aria-hidden="true">&times;</span>\n' +
+                '</button>';
+            html += '</div>';
+            html += '<div class="modal-body">' + data.content + '</div>';
+            html += '<div class="modal-footer">';
+            html += '<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>';
+            html += '</div>';
+            html += '</div>';
+            html += '</div>';
+            html += '</div>';
+        return html;
+
+    }
+
+    //generate html
+    function build(data) {
+        var html = '';
+        for (var i = 0; i < data.length; i++) {
+            html += '<div class="row mt-5 article">';
+            html += '<div id="title" data-toggle="modal" class="col-6 d-flex align-items-end"><h2>' + data[i].title + '</h2></div>';
+            html += '</div>';
+            html += '<div class="row">';
+            html += '<div class="col-3 d-flex align-items-end"><h6>' + data[i].date + '</h6></div>';
+            html += '</div>';
+            html += '<div class="row my-3 mb-1">';
+            html += '<div class="col-12 d-flex align-items-end article">' + data[i].content.substr(0, 100) + '...' +  '</div>';
+            html += '</div>';
+            html += '<div class="row">' + buildModal(data[i]) + '</div>';
+            html += '<div class="row mt-3">' + cats(data[i].categories) + '</div>';
+        }
+        return html;
+    }
+
+    request.done(function(data) {
+        $('#posts').html(build(data));
+    });
+
+})
+</script>
 </body>
 </html>
