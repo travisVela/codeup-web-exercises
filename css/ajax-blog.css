@@ -1,0 +1,40 @@
+body {
+    background: #333;
+    color: #eee;
+}
+.nav {
+    height: 50px;
+}
+
+.jumbotron {
+    color: #444;
+    height: 300px;
+    width: 100%;
+}
+
+li {
+    list-style: none;
+
+}
+ul:first-child {
+    margin-left: 15px;
+}
+
+a {
+    color: #00aced;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #87cefa;
+}
+.btn {
+    background-color: #00aced;
+}
+.btn:hover {
+    background-color: #fff;
+    color: #00aced;
+}
+.modal-content {
+    color: #333;
+}
