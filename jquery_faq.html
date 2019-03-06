@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>jQuery FAQ</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
         .invisible {
             visibility: hidden;
@@ -39,11 +40,25 @@
             width: 50%;
             background-color: #333;
             text-align: center;
+            margin: 0 auto;
             margin-top: 30px;
+            margin-bottom: 30px;
         }
         #signUp:hover {
             background: #eee;
             color: #333;
+        }
+        #x {
+            background-color: #000;
+            border: 1px solid #111;
+            border-radius: 50%;
+            min-width: 10px;
+            min-height: 10px;
+            color: #fff;
+            padding: 10px;
+        }
+        #x:hover {
+            cursor: pointer;
         }
     </style>
 </head>
@@ -107,6 +122,7 @@
 <br>
 
 <button id="yellow">Change to yellow</button>
+
 
 <script
         src="https://code.jquery.com/jquery-3.3.1.min.js"
