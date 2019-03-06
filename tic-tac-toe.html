@@ -26,31 +26,37 @@
 <!--   game page   -->
 
 <div id="game" class="container mt-5">
-    <div class="row mb-5">
+    <div class="row mb-5 d-flex justify-content-around">
         <div id="players" class="col-2"></div>
-        <div class="col x d-flex justify-content-center mx-4 align-items-center highlight">
-            X   wins:
+        <div class="row x highlight d-inline-flex">
+            <div class="col  d-flex justify-content-center  align-items-center ">
+                X wins:
+            </div>
+            <div id="xWins" class="col d-flex justify-content-center align-items-center "></div>
         </div>
-        <div class="col o d-flex justify-content-center align-items-center mx-4">
-            O   wins:
+        <div class="row o d-inline-flex">
+            <div class="col d-flex justify-content-center  align-items-center">
+                O wins:
+            </div>
+            <div id="oWins" class="col d-flex justify-content-center align-items-center"></div>
         </div>
     </div>
     <div id="board" class="row d-flex justify-content-center align-items-center">
         <div class="col-8">
             <div class="row d-flex justify-content-center gameRow">
-                <div id="1" class="col play borderBottom borderRight display-4 d-flex justify-content-center align-items-center"></div>
-                <div id="2" class="col play borderBottom borderRight display-4 d-flex justify-content-center align-items-center"></div>
-                <div id="3" class="col play borderBottom display-4 d-flex justify-content-center align-items-center"></div>
+                <div  class="col play borderBottom borderRight display-4 d-flex justify-content-center align-items-center space"></div>
+                <div  class="col play borderBottom borderRight display-4 d-flex justify-content-center align-items-center space"></div>
+                <div  class="col play borderBottom display-4 d-flex justify-content-center align-items-center space"></div>
             </div>
             <div class="row d-flex justify-content-center gameRow">
-                <div id="4" class="col play borderBottom borderRight display-4 d-flex justify-content-center align-items-center"></div>
-                <div id="5" class="col play borderBottom borderRight display-4 d-flex justify-content-center align-items-center"></div>
-                <div id="6" class="col play borderBottom display-4 d-flex justify-content-center align-items-center"></div>
+                <div  class="col play borderBottom borderRight display-4 d-flex justify-content-center align-items-center space"></div>
+                <div  class="col play borderBottom borderRight display-4 d-flex justify-content-center align-items-center space"></div>
+                <div  class="col play borderBottom display-4 d-flex justify-content-center align-items-center space"></div>
             </div>
             <div class="row d-flex justify-content-center gameRow">
-                <div id="7" class="col play borderRight display-4 d-flex justify-content-center align-items-center"></div>
-                <div id="8" class="col play borderRight display-4 d-flex justify-content-center align-items-center"></div>
-                <div id="9" class="col play  display-4 d-flex justify-content-center align-items-center"></div>
+                <div  class="col play borderRight display-4 d-flex justify-content-center align-items-center space"></div>
+                <div  class="col play borderRight display-4 d-flex justify-content-center align-items-center space"></div>
+                <div  class="col play  display-4 d-flex justify-content-center align-items-center space"></div>
             </div>
         </div>
     </div>
@@ -61,7 +67,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="winnerPopup">Awesome Job!!</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
