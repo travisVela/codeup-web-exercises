@@ -3,57 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Ajax Blog</title>
+    <title>Blog</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/ajax-blog.css">
+
 </head>
 <body>
 
 <!--   navbar   -->
-<ul class="nav justify-content-center">
+<ul class="nav fixed-top justify-content-center">
     <li class="nav-item">
-        <a class="nav-link active" href="#">Home</a>
+        <a class="nav-link active scroll" href="#home">Home</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">News</a>
+        <a class="nav-link scroll" href="#posts">Latest</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="#">Archive</a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link scroll" href="#footer">Contact</a>
+    </li>
 </ul>
 
 <!--   header   -->
-<div class="row jumbotron">
+<div id="home" class="row jumbotron">
     <h1 class="col d-flex justify-content-center align-items-center display-4">
-        My Blog About Stuff
+        Blog About Stuff
     </h1>
 </div>
 
 <!--   content   -->
 
 <div id="posts" class="container">
-
 </div>
-<!-- Modal -->
-<!--<div class="modal fade" id="post" tabindex="-1" role="dialog" aria-labelledby="postContent" aria-hidden="true">-->
-    <!--<div class="modal-dialog" role="document">-->
-        <!--<div class="modal-content">-->
-            <!--<div class="modal-header">-->
-                <!--<h5 class="modal-title" id="postContent">Modal title</h5>-->
-                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
-                    <!--<span aria-hidden="true">&times;</span>-->
-                <!--</button>-->
-            <!--</div>-->
-            <!--<div class="modal-body">-->
-                <!--...-->
-            <!--</div>-->
-            <!--<div class="modal-footer">-->
-                <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
-                <!--<button type="button" class="btn btn-primary">Save changes</button>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</div>-->
+
+<!--   footer   -->
+<div id="footer" class="container-fluid">
+    <div class="row">
+        <div class="col text-center">
+            <p class=""><a href="#"><i class="mr-2 fas fa-map-marker-alt"></i></a> 600 Navarro st. #350</p>
+            <p class=""><a href="#"><i class="mr-2 fas fa-phone"></i></a> 123.456.7891</p>
+            <p class=""><a href="#"><i class="mr-2 fas fa-envelope-open"></i></a> email@email.com</p>
+        </div>
+        <div class="col d-inline-flex">
+            <a href="#" class="mx-auto"><i class="fab fa-facebook-square fa-3x mx-auto"></i></a>
+            <a href="#" class="mx-auto"><i class="fab fa-instagram fa-3x mx-auto"></i></a>
+            <a href="#" class="mx-auto"><i class="fab fa-blogger-b fa-3x mx-auto"></i></a>
+        </div>
+        <div class="col d-flex justify-content-center">
+            <p>© 2019 Blog about stuff. All rights reserved.</p>
+        </div>
+    </div>
+</div>
+
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -95,7 +99,6 @@ $().ready(function() {
             html += '</div>';
             html += '</div>';
         return html;
-
     }
 
     //generate html
@@ -112,10 +115,17 @@ $().ready(function() {
             html += '<div class="col-12 d-flex align-items-end article">' + data[i].content.substr(0, 100) + '...' +  '</div>';
             html += '</div>';
             html += '<div class="row">' + buildModal(data[i]) + '</div>';
-            html += '<div class="row mt-3">' + cats(data[i].categories) + '</div>';
+            html += '<div class="row mt-3 mb-5">' + cats(data[i].categories) + '</div>';
         }
         return html;
     }
+
+    //scroll effect for anchor links on page
+    $('.scroll').on('click', function(e) {
+       e.preventDefault();
+        var aid = $(this).attr('href');
+       $('html, body').animate({scrollTop: $(aid).offset().top - 50}, 'slow');
+    });
 
     request.done(function(data) {
         $('#posts').html(build(data));

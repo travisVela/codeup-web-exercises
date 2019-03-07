@@ -4,11 +4,12 @@ body {
 }
 .nav {
     height: 50px;
+    background: #333;
 }
 
 .jumbotron {
     color: #444;
-    height: 300px;
+    height: 500px;
     width: 100%;
 }
 
@@ -35,6 +36,40 @@ a:hover {
     background-color: #fff;
     color: #00aced;
 }
+
+/************
+*           *
+*   modal   *
+*           *
+************/
 .modal-content {
+    height: 400px;
+    width: 600px;
+    background-color: #ddd;
     color: #333;
 }
+.modal-header {
+    border-bottom: 1px solid #ccc;
+}
+.modal-footer {
+    border-top: 1px solid #ccc;
+}
+.close {
+    text-shadow: none;
+}
+
+/*************
+*            *
+*   footer   *
+*            *
+*************/
+#footer {
+    background-color: #e9ecef;
+    padding: 50px;
+    color: #333;
+}
+
+.fab, .fas {
+    color: #00aced;
+}
+
