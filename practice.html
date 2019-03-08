@@ -3,8 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <title>Practice</title>
+    <style>
+        .invisible, .hide {
+            display: none;
+        }
+        dd {
+            width: 200px;
+            height: 100px;
+            border: 1px solid #ddd;
+            padding: 20px;
+        }
+        .highlight {
+            background-color: #aaee00;
+        }
+    </style>
 </head>
 <body>
+
+<div id="container">
+
+    <div id="signUp">
+        <h1>Would you like to sign up for our news letter?</h1>
+        <span id="x">X</span>
+    </div>
+    <br>
+    <br>
+    <h2 id="register" class="hide">Register for site?</h2>
+
+    <h1 id="hello" class="heading">Hello World!</h1>
+    <p id="ipsum" >
+        Half-giant jinxes peg-leg gillywater broken glasses large black dog Great Hall. Nearly-Headless Nick now string them together, and answer me this, which creature would you be unwilling to kiss? Poltergeist sticking charm, troll umbrella stand flying cars golden locket Lily Potter. Pumpkin juice Trevor wave your wand out glass orbs, a Grim knitted hats. Stan Shunpike doe patronus, suck his soul Muggle-Born large order of drills the trace. Bred in captivity fell through the veil, quaffle blue flame ickle diddykins Aragog. Yer a wizard, Harry Doxycide the woes of Mrs. Weasley Goblet of Fire.
+    </p>
+    <h3 id="subHeading" class="heading">Foods I like</h3>
+    <ul id="foods">
+        <li id="firstItem" class="listItem">
+            hamburger from What-a-burger
+        </li>
+        <li id="secondItem" class="listItem">
+            hamburger from Big Bob's Burgers
+        </li>
+        <li id="thirdItem" class="listItem">
+            hamburger from Cheddar's
+        </li>
+        <li id="fourthItem" class="listItem">
+            hamburger from Frontier Burger
+        </li>
+    </ul>
+</div>
+
+<!--   faqs   -->
+<div class="container">
+    <dl>
+        <dt><h3>Question 1</h3></dt>
+        <dd class="invisible">Answer 1</dd>
+        <dt><h3>Question 2</h3></dt>
+        <dd class="invisible">Answer 2</dd>
+        <dt><h3>Question 3</h3></dt>
+        <dd class="invisible">Answer 3</dd>
+        <dt><h3>Question 4</h3></dt>
+        <dd class="invisible">Answer 4</dd>
+        <dt><h3>Question 5</h3></dt>
+        <dd class="invisible">Answer 5</dd>
+        <dt><h3>Question 6</h3></dt>
+        <dd class="invisible">Answer 6</dd>
+        <dt><h3>Question 7</h3></dt>
+        <dd class="invisible">Answer 7</dd>
+        <dt><h3>Question 8</h3></dt>
+        <dd class="invisible">Answer 8</dd>
+
+    </dl>
+</div>
+
+<!--   parks   -->
+
+<h3>Zion National Park</h3>
+<ul id="zion" class="hide">
+    <li>Before it was a national park, Zion was a national monument, and it’s name wasn’t Zion.</li>
+    <li>Zion is home to one of the greatest engineering feats of modern times. </li>
+    <li> Zion is more than just slot canyons and amazing hikes -- it also protects archeological sites.</li>
+    <li>Zion’s Angels Landing provides spectacular views, but it’s one of the world’s most dangerous.</li>
+</ul>
+<h3>Arches National Park</h3>
+<ul id="arches" class="hide">
+    <li>The park has over 2,000 natural stone arches, in addition to hundreds of soaring pinnacles, massive fins and giant balanced rocks.</li>
+    <li>It contains the highest density of natural arches in the world.</li>
+    <li>Arches National Park covers an area of 310 square kilometers (120 square miles) or 31,031 hectares (76,679 acres).</li>
+    <li>ts highest elevation is 1,723 meters (5,653 feet) at Elephant Butte, and its lowest elevation is
+        1,245 meters (4,085 feet) at the visitor center.</li>
+</ul>
+<h3>Everglades National Park</h3>
+<ul id="everglades" class="hide">
+    <li>Largest continuous stand of sawgrass prairie in North America.
+    </li>
+    <li>Predominant water recharge area for all of South Florida through the Biscayne aquifer.</li>
+    <li>Home of thirteen endangered and ten threatened species.</li>
+    <li>Largest mangrove ecosystem in the western hemisphere.</li>
+</ul>
+<br>
+
+<button id="yellow">Change to yellow</button>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="js/practice.js"></script>
 </body>
 </html>

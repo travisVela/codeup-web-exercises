@@ -598,4 +598,55 @@ console.log(makeSandwhichObjects(breads, fillings));
 
  fizzBuzz(num);
 
+console.log('\n');
+console.log('jquery practice');
+console.log('======');
+console.log('\n');
+
+$('h1').on('click', function(){
+    $(this).css('background-color', '#ddee00');
+});
+
+$('p').on('click', function() {
+    $(this).css('font-size', '18px');
+});
+
+$('li').hover(function() {
+    $(this).css('color', '#cc0000');
+    },
+    function() {
+    $(this).css('color', '');
+    });
+$('dt').on('click', function() {
+   $(this).next().toggleClass('invisible');
+   $(this).toggleClass('highlight');
+});
+
+//parks stuff
+$('#yellow').on('click', function() {
+    $('ul').each(function() {
+        $(this).children().last().css('background', '#bbff00');
+    })
+});
+
+$('h3').on('click', function() {
+    $(this).next().css('font-weight', 'bold');
+});
+
+$('li').on('click', function() {
+   $(this).parent().children().first().css('color', '#0033ff');
+});
+
+//sign up
+$('#x').on('click', function() {
+   $('#signUp').toggleClass('invisible');
+});
+
+$('h3').on('click', function() {
+   $(this).next().slideToggle(500);
+});
+
+setTimeout(function() {
+    $('#register').fadeIn(1000);
+}, 8000);
 
