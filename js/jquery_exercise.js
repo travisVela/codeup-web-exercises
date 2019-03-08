@@ -16,8 +16,7 @@ $(document).ready(function() {
     $('li').hover(
         function() {
         $(this).css('color', '#f00');
-        },
-        function() {
+        }, function() {
             $(this).css('color', '');
         })
 });
