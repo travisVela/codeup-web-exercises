@@ -1,5 +1,6 @@
 'use strict';
 
-import {hello} from './say-hello.js';
+const added = require('./say-hello.js');
 
-console.log(hello());
+console.log(added.hello());
+console.log(added.add(2,4));
