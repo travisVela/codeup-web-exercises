@@ -650,3 +650,14 @@ setTimeout(function() {
     $('#register').fadeIn(1000);
 }, 8000);
 
+//3-11 pushup
+
+ function power(base, exponent) {
+     var result = 1;
+
+     for (var i = 0; i < exponent; i++) {
+         result *= base;
+     }
+     return result;
+ }
+ console.log(power(12,3));
