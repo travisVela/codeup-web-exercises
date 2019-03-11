@@ -64,3 +64,9 @@ body {
 .modal-header .close {
     display: none;
 }
+
+#board {
+    /*border: 2px solid #444;*/
+    width: 50%;
+    height: 500px;
+}

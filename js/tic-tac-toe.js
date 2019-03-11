@@ -13,43 +13,55 @@ $(document).ready(function() {
     var goesFirst = Math.floor(Math.random() * 2) + 1;
     var firstWins = 0;
     var secondWins = 0;
+    var winner = '';
 
     //assign divs ids
     $('.space').each(function(i) {
         $(this).attr("id", ids[i])
     });
 
+    //initialize game
+    function gameInit() {
+        order();
+        highlight();
+        setTimeout(function(){
+            $('#players').toggleClass('invisible');
+        }, 5000);
+    }
+    gameInit();
+
     //determine player 1 and show game board
-    $('body').on('keyup', function() {
+    function order() {
+        $('body').on('keyup', function () {
 
-        $('#landing').remove();
+            $('#landing').remove();
 
-        if (goesFirst === 1) {
-            $('#players').html('X will go first');
-            first = 'X';
-            second = 'O';
+            if (goesFirst === 1) {
+                $('#players').html('X will go first');
+                first = 'X';
+                second = 'O';
 
-        } else if (goesFirst === 2) {
-            $('#players').html('O will go first');
-            first = 'O';
-            second = 'X';
-        }
+            } else if (goesFirst === 2) {
+                $('#players').html('O will go first');
+                first = 'O';
+                second = 'X';
+            }
 
-        $('#game').show();
+            $('#game').show();
 
-    });
-
-    setTimeout(function(){
-        $('#players').toggleClass('invisible');
-    }, 5000);
+        });
+    }
 
     //invert highlight if O starts
-    if (turn === 0 && goesFirst === 2) {
-        $('.x, .o').toggleClass('highlight');
+    function highlight() {
+        if (turn === 0 && goesFirst === 2) {
+            $('.x, .o').toggleClass('highlight');
+        }
     }
 
     //game
-    $('body').on('click', function(e) {
+    $('#board').on('click', function(e) {
+
         var target = $(e.target);
         if (target.is('.play') && (turn % 2 === 0)) {
             target.html(first);
@@ -86,6 +98,8 @@ $(document).ready(function() {
                 $(document).off();
             });
             firstWins++;
+            goesFirst = 1;
+
 
         } else if ($('#1').html() == second && $('#2').html() == second && $('#3').html() == second ||
         $('#4').html() == second && $('#5').html() == second && $('#6').html() == second ||
@@ -107,6 +121,7 @@ $(document).ready(function() {
                 $(document).off();
             });
             secondWins++;
+            goesFirst = 2;
         } else if (turn == 9) {
             $(document).on('click keyup', function() {
                 $('#winner').modal('show');
@@ -121,6 +136,7 @@ $(document).ready(function() {
     $('#restart').on('click', function() {
         turn = 0;
         $('.play').html('');
+
     })
 
 });
