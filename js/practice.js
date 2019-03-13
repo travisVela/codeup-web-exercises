@@ -661,3 +661,4 @@ setTimeout(function() {
      return result;
  }
  console.log(power(12,3));
+
