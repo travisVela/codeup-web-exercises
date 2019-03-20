@@ -29,6 +29,7 @@ function gitHub(username) {
                 $('#git').html(`<p> ${username}'s last commit on: ${data[0].created_at} </p>`);
                 return `Last commit of ${username}: ${data[0].created_at}`
 
+
             })
     })
 }
