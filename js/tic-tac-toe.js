@@ -24,11 +24,14 @@ $(document).ready(function() {
     function gameInit() {
         order();
         highlight();
+        play();
         setTimeout(function(){
             $('#players').toggleClass('invisible');
         }, 5000);
     }
     gameInit();
+
+
 
     //determine player 1 and show game board
     function order() {
@@ -46,9 +49,7 @@ $(document).ready(function() {
                 first = 'O';
                 second = 'X';
             }
-
             $('#game').show();
-
         });
     }
 
@@ -59,23 +60,24 @@ $(document).ready(function() {
         }
     }
 
-    //game
-    $('#board').on('click', function(e) {
+    //alternate Xs and Os
+    function play() {
+        $('#board').on("click", function(e) {
+            let target = $(e.target);
+            if (target.is(':empty') && (target.is('.play')) && (turn % 2 === 0)) {
+                target.html(first);
+                $('.x, .o').toggleClass('highlight');
+                turn++;
+            } else if (target.is(':empty') && (target.is('.play')) && (turn % 2 === 1)) {
+                target.html(second);
+                $('.x, .o').toggleClass('highlight');
+                turn++;
+            }
+        })
+    }
 
-        var target = $(e.target);
-        if (target.is('.play') && (turn % 2 === 0)) {
-            target.html(first);
-            turn++;
-        } else if (target.is('.play') && (turn % 2 === 1)) {
-            target.html(second);
-            turn++;
-        }
-
-        if ((turn % 2 === 0 && goesFirst === 1) || (turn % 2 === 0 && goesFirst === 2)) {
-            $('.x, .o').toggleClass('highlight');
-        } else if ((turn % 2 === 1 && goesFirst === 1) || turn % 2 === 1 && goesFirst === 2) {
-            $('.x, .o').toggleClass('highlight');
-        }
+    //determine winner
+    $('#board').on('click', function() {
 
         //winning combos for first
         if ($('#1').html() == first && $('#2').html() == first && $('#3').html() == first ||
@@ -88,7 +90,7 @@ $(document).ready(function() {
         $('#3').html() == first && $('#5').html() == first && $('#7').html() == first
         ) {
             $(document).on('click', function() {
-                $('#winner').modal('show')
+                $('#winner').modal('show');
                 $('.modal-body').html(first + ' wins');
                 if (first =='X') {
                     $('#xWins').html(' ' + firstWins);
@@ -97,6 +99,7 @@ $(document).ready(function() {
                 }
                 $(document).off();
             });
+            winner = first;
             firstWins++;
             goesFirst = 1;
 
@@ -120,6 +123,7 @@ $(document).ready(function() {
                 }
                 $(document).off();
             });
+            winner = second;
             secondWins++;
             goesFirst = 2;
         } else if (turn == 9) {
@@ -129,14 +133,11 @@ $(document).ready(function() {
                 $(document).off();
             });
         }
-
-
     });
 
-    $('#restart').on('click', function() {
+    $('#restart').off().on('click', function() {
         turn = 0;
         $('.play').html('');
-
     })
 
 });
