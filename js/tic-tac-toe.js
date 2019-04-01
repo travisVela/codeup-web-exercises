@@ -81,8 +81,9 @@ $(document).ready(function() {
 
     //if second player wins flip player 2 to even and player 1 to odd
     function secondPlay() {
-        $('#board').on("click", function(e) {
+        $('#board').off().on("click", function(e) {
             let target = $(e.target);
+            console.log("Hello");
             if (target.is(':empty') && (target.is('.play')) && (count % 2 === 0)) {
                 target.html(second);
                 $('.x, .o').toggleClass('highlight');
@@ -121,8 +122,8 @@ $(document).ready(function() {
                     $(document).off();
                 });
                 firstWins++;
-                turn = 1;
                 console.log("line 122 " + turn);
+                return turn = 1;
 
             } else if ($('#1').html() == second && $('#2').html() == second && $('#3').html() == second ||
                 $('#4').html() == second && $('#5').html() == second && $('#6').html() == second ||
@@ -144,8 +145,8 @@ $(document).ready(function() {
                     $(document).off();
                 });
                 secondWins++;
-                turn = 2;
                 console.log("line 147 " + turn);
+                return turn = 2;
 
             } else if (count == 9) {
                 $(document).on('click keyup', function () {
@@ -155,6 +156,8 @@ $(document).ready(function() {
                 });
             }
         });
+
+        return turn;
     }
 
     //restart game on modal button click
@@ -164,9 +167,11 @@ $(document).ready(function() {
                 secondPlay();
             } else {
                 play();
-            }count = 0;
+            }
+            count = 0;
             $('.play').html('');
-
+            winner();
+        console.log("line 174 " + turn);
         })
     }
 
